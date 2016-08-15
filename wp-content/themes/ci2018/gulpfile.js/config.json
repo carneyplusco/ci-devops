@@ -21,7 +21,7 @@
       "dest": "scripts",
       "extractSharedJs": true,
       "entries": {
-        "main": ["./main.js"],
+        "main": ["./main.js"]
       },
       "extensions": ["js"]
     },
