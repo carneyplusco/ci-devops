@@ -1,0 +1,28 @@
+{
+  "name": "ci2018",
+  "license": "MIT",
+  "description": "Composer packages for CI2018",
+  "homepage": "https://www.cmoa.org",
+  "authors": [
+    {
+      "name": "Carney+Co.",
+      "email": "dev.team@carney.co",
+      "homepage": "http://carney.co"
+    },
+    {
+      "name": "Carnegie Museum of Art",
+      "email": "info@cmoa.org",
+      "homepage": "http://github.com/cmoa"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "require": {
+    "mustache/mustache": "~2.5",
+    "vlucas/phpdotenv": "^2.0.1",
+    "oscarotero/env": "^1.0",
+    "codeception/codeception": "^2.1",
+    "roots/wp-password-bcrypt": "^1.0.0"
+  }
+}
