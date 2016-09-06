@@ -56,16 +56,21 @@
   }
 
   function displayResults(results) {
-    $(results).each(function(i, el) {
-      var result = el['_source'];
-      appendToPage(result, result_template);
+    if ($(results).length == 0) {
+      $('#ajax-results').hide();
+      $('#search-results').append('<p>No results found.</p>');
+    } else {
+      $(results).each(function(i, el) {
+        var result = el['_source'];
+        appendToPage(result, result_template);
 
-      if ($(results).length < results_limit) {
-        $('#ajax-results').hide();
-      } else {
-        $('#ajax-results').show();
-      }
-    });
+        if ($(results).length < results_limit) {
+          $('#ajax-results').hide();
+        } else {
+          $('#ajax-results').show();
+        }
+      });
+    }
   }
 
   function loadResultTemplate() {
