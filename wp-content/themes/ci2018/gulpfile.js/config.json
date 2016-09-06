@@ -21,7 +21,10 @@
       "dest": "scripts",
       "extractSharedJs": true,
       "entries": {
-        "main": ["./main.js"]
+        "main": [
+          "./main.js",
+          "./home-bg.js"
+        ]
       },
       "extensions": ["js"]
     },
