@@ -1,0 +1,13 @@
+<article>
+  <aside>
+    <span>{{ id }}</span>
+  </aside>
+  <section>
+    <header>
+      <p class="entry-title">
+        <a href="{{ url }}">{{ title }}</a>
+      </p>
+    </header>
+    <div class="entry-summary">{{ body }}</div>
+  </section>
+</article>
