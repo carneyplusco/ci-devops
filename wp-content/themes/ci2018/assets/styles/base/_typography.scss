@@ -1,0 +1,161 @@
+// BASE TYPOGRAPHY STYLES
+////////////////////////////////////////////////////////////////////////////////
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: $base-background-color;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+.accent-text {
+  font-family: $accent-font-family;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font-family;
+  line-height: $header-line-height;
+  font-weight: 100;
+  // color: $base-font-color;
+  margin: 0 0 ($base-spacing / 2);
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+}
+
+
+h1 {
+  font-size: 2.5em;
+  color: $medium-gray;
+}
+
+h2 {
+  font-size: 1.75em;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+h4 {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+p {
+  margin: 0 0 ($base-spacing / 2);
+}
+
+a {
+  transition: color, 0.2s;
+  color: $base-link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $hover-link-color;
+  }
+
+  &:active,
+  // &:focus
+  {
+    color: $hover-link-color;
+  }
+
+  &:focus {
+    // outline: 2px solid $red;
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
+
+  &.large {
+    margin: $large-spacing 0;
+  }
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+pre {
+  margin: 0;
+  background: rgba($teal, .25);
+  display: inline;
+}
+
+blockquote {
+  font-family: $accent-font-family;
+  font-size: 1.15em;
+  margin: 0 0 ($base-spacing / 2);
+}
+
+cite {
+  color: lighten($base-font-color, 25);
+  font-style: italic;
+
+  &:before {
+    content: "\2014 \00A0";
+  }
+}
+
+// Alternate section colors
+////////////////////////////////////////////////////////////////////////////////
+%inverse {
+  color: $inverse-font-color;
+
+  a {
+    color: $action-color;
+
+    &:hover {
+      color: $action-hover-color;
+    }
+
+    &:active, &:focus {
+      color: $action-hover-color;
+      outline: none;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $inverse-font-color;
+  }
+
+  pre {
+    border-color: $inverse-font-color;
+  }
+
+  hr {
+    border-color: rgba(#fff, .25);
+  }
+
+}

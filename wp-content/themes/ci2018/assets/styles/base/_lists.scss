@@ -1,0 +1,11 @@
+// BASE LIST STYLES
+////////////////////////////////////////////////////////////////////////////////
+
+ol {
+  list-style-position: inside;
+  padding-left: 0;
+
+  li a {
+    margin-left: 27px;    // MAGIC IMPORTANT NUMBER
+  }
+}

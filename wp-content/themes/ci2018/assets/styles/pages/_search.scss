@@ -1,0 +1,38 @@
+body.search {
+  article {
+    @include span-columns(12);
+    margin-bottom: 0.75rem;
+    
+    aside {
+      @include span-columns(1);
+      // display: inline-block;
+      // width: 50px;
+    }
+    section {
+      @include span-columns(11);
+
+      .entry-summary {
+        margin-top: 0.75rem;
+      }
+      .entry-title {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  #ajax-results {
+    // background: url("../../assets/icons/uEB05-loop2.svg") no-repeat top left;
+    background: url("../../assets/icons/uEA01-ci-loop.svg") no-repeat top left;
+    background-position: left center;
+    background-size: 0.85em;
+    padding-left: 8.7613%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .navigation.posts-navigation {
+    display: none;
+  }
+}
