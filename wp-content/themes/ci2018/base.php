@@ -15,19 +15,20 @@ use Roots\Sage\Wrapper;
       </div>
     <![endif]-->
     <?php
-      do_action('get_header');
-      get_template_part('templates/header');
+      // do_action('get_header');
+      // get_template_part('templates/header');
     ?>
     <div class="wrap container" role="document">
       <div class="content row">
-        <main class="main">
-          <?php include Wrapper\template_path(); ?>
-        </main><!-- /.main -->
-        <?php if (Setup\display_sidebar()) : ?>
+        <!-- <?php if (Setup\display_sidebar()) : ?> -->
           <aside class="sidebar">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
-        <?php endif; ?>
+        <!-- <?php endif; ?> -->
+        <main class="main">
+          <?php include Wrapper\template_path(); ?>
+        </main><!-- /.main -->
+
       </div><!-- /.content -->
     </div><!-- /.wrap -->
     <?php
