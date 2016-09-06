@@ -6,7 +6,7 @@
   $(document).ready(function() {
     // ElasticSearch JQuery client
     var client = new $.es.Client({
-      host: 'search-ci2018dev-rqxnldcecqbo2uevsjg6mhqbju.us-east-1.es.amazonaws.com'
+      host: ''
     });
 
     var query = $('.search-form').find('input').val();
