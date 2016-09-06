@@ -68,9 +68,14 @@ define('NONCE_SALT', env('NONCE_SALT'));
 // define('BLOG_ID_CURRENT_SITE', 1);
 
 /**
- * ElasticSearch settings
+ * ElasticPress settings
  */
 define('EP_HOST', env('EP_HOST'));
+
+/**
+ * ElasticSearch settings
+ */
+define('ES_HOST', env('ES_HOST'));
 
 /**
  * Cookies settings

@@ -107,5 +107,10 @@ function assets() {
   wp_enqueue_script('mustache', '//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js');
   wp_enqueue_script('es-client', get_stylesheet_directory_uri() . '/assets/scripts/es-client.js', [], null, true);
 
+  // Not necessary if not searching WP posts
+  global $wp_query;
+  wp_localize_script('es-client', 'esclient', array(
+    'es_host' => ES_HOST 
+  ));
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

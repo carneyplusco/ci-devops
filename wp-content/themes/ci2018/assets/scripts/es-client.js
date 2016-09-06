@@ -6,7 +6,7 @@
   $(document).ready(function() {
     // ElasticSearch JQuery client
     var client = new $.es.Client({
-      host: ''
+      host: esclient.es_host
     });
 
     var query = $('.search-form').find('input').val();
