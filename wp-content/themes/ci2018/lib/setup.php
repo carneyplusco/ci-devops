@@ -96,6 +96,7 @@ function display_sidebar() {
  */
 function assets() {
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
+  wp_enqueue_style('featherlight', '/bower_components/featherlight/src/featherlight.css', false, null);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
@@ -105,12 +106,13 @@ function assets() {
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
   wp_enqueue_script('elasticsearch', '//cdnjs.cloudflare.com/ajax/libs/elasticsearch/11.0.1/elasticsearch.jquery.js');
   wp_enqueue_script('mustache', '//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js');
+  wp_enqueue_script('featherlight', '/bower_components/featherlight/src/featherlight.js', false, null);
   wp_enqueue_script('es-client', get_stylesheet_directory_uri() . '/assets/scripts/es-client.js', [], null, true);
 
   // Not necessary if not searching WP posts
   global $wp_query;
   wp_localize_script('es-client', 'esclient', array(
-    'es_host' => ES_HOST 
+    'es_host' => ES_HOST
   ));
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
