@@ -58,6 +58,11 @@
       "dest": "fonts",
       "sassDest": "utility",
       "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+    },
+
+    "bower": {
+      "src": "./bower_components",
+      "dest": "bower_components"
     }
   }
 }
