@@ -6,11 +6,16 @@ body.search {
     aside {
       @include span-columns(1);
     }
+
+    img {
+      &:hover {cursor: pointer;}
+    }
+
     section {
       @include span-columns(11);
 
       .entry-summary {
-        margin-top: 0.75rem;
+        margin-top: 0;
       }
       .entry-title {
         margin-bottom: 0;
