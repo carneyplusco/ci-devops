@@ -5,9 +5,18 @@
   <section>
     <header>
       <p class="entry-title">
-        <a href="{{ url }}">{{ title }}</a>
+        {{ title }}
       </p>
     </header>
-    <div class="entry-summary">{{ body }}</div>
+    <span>INTERNATIONALS:</span>
+    <ul class="entry-summary">
+      {{ #internationals }}
+        <li>
+          <span>{{ name }}</span>
+          <p>ROLE(S): {{ roles }}</p>
+        </li>
+      {{ /internationals }}
+    </ul>
+    <!--img src="/wp-content/themes/ci2018/assets/images/blue-texture.png" data-featherlight="/wp-content/themes/ci2018/assets/images/blue-texture.png"-->
   </section>
 </article>

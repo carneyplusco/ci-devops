@@ -25,14 +25,7 @@
     $('.search-form').submit(function(e) {
       e.preventDefault();
       query = $(this).find('input').val();
-
-      if ( $('body').is('.search') ) {
-        resetResults();
-        search(client, query);
-      }
-      else {
-        window.location = '/?s=' + query;
-      }
+      window.location = '/?s=' + query;
     });
 
     // "LOAD MORE" listener
@@ -51,8 +44,23 @@
   //
 
   function appendToPage(result, template) {
-    var rendered = Mustache.render(template, {id: result.id, url: '', title: result.name.toUpperCase(), body: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum'.toUpperCase()});
+
+    var data = {
+      id: result.id,
+      internationals: [],
+      title: result.name.toUpperCase()
+    };
+
+    $(result.internationals).each(function(i, el){
+      data.internationals.push({
+        name: el.name.toUpperCase(),
+        roles: el.roles.join(', ')
+      });
+    });
+
+    var rendered = Mustache.render(template, data);
     $('#search-results').append(rendered);
+
   }
 
   function displayResults(results) {
