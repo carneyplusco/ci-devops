@@ -113,5 +113,6 @@ vendor/*
 
 # Node Package Manager
 node_modules
+bower_components
 
 tests/_output/*
