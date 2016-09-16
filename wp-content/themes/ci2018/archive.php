@@ -1,19 +1,23 @@
-<?php
-  $title = strtoupper(wp_title('', false, 'right'));
-  echo '<a id="page-title" href=""><span class="up-arrow"></span>' . $title . '</a>';
-?>
-<a class="back-button" href="/">BACK</a>
-
 <?php $category = get_the_category()[0]; ?>
 <?php $menu_items = wp_get_nav_menu_items('Home Nav'); ?>
 <?php
   $category_number = 0;
   foreach ($menu_items as $key => $value) {
-    if ($value->title == strtoupper($category->name)) {
+    if (strtoupper($value->title) == strtoupper($category->name)) {
       $category_number = $key + 1;
     }
   }
 ?>
+
+<header>
+  <?php
+    $title = strtoupper(wp_title('', false, 'right'));
+    $title_length = strlen($title);
+    echo '<a id="page-title" href=""><span class="section-number">' . $category_number . '.</span>' . $title . '</a>';
+  ?>
+  <span class="title-underline"></span>
+  <a class="back-button" href="/">BACK</a>
+</header>
 
 <?php $count = $category->category_count; ?>
 <?php while (have_posts()) : the_post(); ?>
