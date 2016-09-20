@@ -1,16 +1,24 @@
 // break into separate files eventually. I'm just bad at things right now
 
-.back-button {
-  float: right;
-}
+.back-button { float: right; }
 
-div.content.row {
+div.wrap.container {
   background: white;
   display: inline-flex;
   margin: 5vh 4vw;
   min-height: 90vh;
   padding: 3em;
   width: 92vw;
+}
+
+div.content.row { width: 100%; }
+
+header {
+  .logotype { @include span-columns(2); }
+  .logo-address {
+    @include span-columns(7);
+    display: none;
+  }
 }
 
 main {
@@ -23,41 +31,38 @@ main {
     aside {
       @include span-columns(1);
     }
-    img {
-      &:hover {cursor: pointer;}
-    }
+
+    img:hover { cursor: pointer; }
+
     section {
       @include span-columns(11);
 
-      .entry-summary {
-        margin-top: 0;
-      }
-      .entry-title {
-        margin-bottom: 0;
-      }
+      .entry-summary { margin-top: 0; }
+      .entry-title { margin-bottom: 0; }
     }
   }
 
-  & > header {
-    margin-bottom: 5%;
-  }
+  & > header { margin-bottom: 5%; }
 
 }
 
-.programs article {
-  padding-left: 8.7613%;
+.home {
+  .logo-address { display: inline-block; }
 }
+
+.programs article { padding-left: 8.7613%; }
 
 #page-title {
   margin-bottom: 5%;
-
-  .section-number {
-    color: #333;
-    height: 0.7em;
-    padding-right: 7.4513%;
-  }
 }
 
-.past-events {
-  margin: 0 1.5% 0 7.5%;
+.section-number {
+  height: 0.7em;
+  @include span-columns(1);
 }
+
+.page-header {
+  margin-bottom: 2ch;
+}
+
+.past-events { margin: 0 1.5% 0 7.5%; }

@@ -19,10 +19,7 @@
 @import "base/lists";
 @import "base/buttons";
 
-@import "base/DEVONLY"
-
-// LAYOUT
-@import "layouts/grid"
+@import "base/DEVONLY";
 
 // SHARED MODULES
 @import "modules/sidebar";
@@ -33,6 +30,10 @@
 @import "pages/search";
 
 // THEMES
-@import "themes/icons"
+@import "themes/icons";
 
 // VENDOR
+
+// LAYOUT
+@import "layouts/grid";
+@import "layouts/mobile";

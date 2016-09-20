@@ -108,26 +108,24 @@ select {
 
 // typewriter themed search input
 input[type="search"] {
-  // how to use sass variable for this? ::before?
-  // background: url("../../assets/icons/uEA07-search.svg") no-repeat top left;
-  background: url("../../assets/icons/uEA02-ci-search.svg") no-repeat top left;
-  background-position: left center;
-  background-size: 0.6em;
+  background: none;
   border: none;
+  display: inline-block;
   outline: none;
-  padding-left: 8.7613%;
+  padding-left: 0;
+  width: 75%;
 
-  &:hover {
-    cursor: pointer;
-  }
-  &:focus {
-    cursor: text;
-  }
+  &:hover { cursor: pointer; }
+  &:focus { cursor: text; }
 }
 
-.home input[type="search"] {
-  // padding-left: 8.7613%;
-  padding-left: 50px;    // also magic and important
+.home {
+  input { margin-left: 0; }
+  
+  .icon {
+    margin-right: 0;
+    width: 50px;
+  }
 }
 
 // Placeholder for text inputs should be the same color as normal font,
