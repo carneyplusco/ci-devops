@@ -1,17 +1,16 @@
-<?php $title = get_the_title(); ?>
-<?php $menu_items = wp_get_nav_menu_items('Home Nav'); ?>
-<?php
-  $title_number = 0;
-  foreach ($menu_items as $key => $value) {
-    if (strtoupper($value->title) == strtoupper($title)) {
-      $title_number = $key + 1;
-    }
-  }
-?>
-
 <header>
-  <?php
-    echo '<a id="page-title" href="/' . strtolower($title) . '"><span class="section-number">' . $title_number . '.</span>' . $title . '</a>';
-  ?>
-  <a class="back-button" href="/">BACK</a>
+  <span class="logotype">
+    <a href="/">Carnegie <i>Int'l</i>, <br>57th ed., 2018</a>
+  </span>
+  <span class="logo-address">
+    <p>
+      Carnegie Museum of Art<br>
+      4400 Forbes Ave.<br>
+      Pittsburgh, PA 15213
+    </p>
+    <p>
+      +1 412 622 3131<br>
+      cmoa.org/carnegieintl
+    </p>
+  </span>
 </header>
