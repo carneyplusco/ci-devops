@@ -108,8 +108,8 @@ function assets() {
   wp_enqueue_script('mustache', '//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js');
   wp_enqueue_script('featherlight', '/bower_components/featherlight/src/featherlight.js', false, null);
   wp_enqueue_script('es-client', get_stylesheet_directory_uri() . '/assets/scripts/es-client.js', [], null, true);
-  wp_enqueue_script('input-underline', get_stylesheet_directory_uri() . '/assets/scripts/input-underline.js', [], null, true);
-  wp_enqueue_script('ajax-programs', get_stylesheet_directory_uri() . '/assets/scripts/programs.js', [], null, true);
+  // wp_enqueue_script('input-underline', get_stylesheet_directory_uri() . '/assets/scripts/input-underline.js', [], null, true);
+  // wp_enqueue_script('ajax-programs', get_stylesheet_directory_uri() . '/assets/scripts/programs.js', [], null, true);
 
   // Not necessary if not searching WP posts
   global $wp_query;
