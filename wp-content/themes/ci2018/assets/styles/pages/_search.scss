@@ -5,13 +5,11 @@ body.search {
 }
 
 .input-underline {
-  position: relative;
-  top: -20px;
-  left: 8.7613%;
-  overflow: hidden;
-  white-space: nowrap;
-}
+  @include shift(1);
+  @include span-columns(5);
 
-body.home .input-underline {
-  left: 50px;
+  overflow: hidden;
+  position: relative;
+  top: -7px;
+  white-space: nowrap;
 }

@@ -62,7 +62,14 @@ main {
 }
 
 .page-header {
-  margin-bottom: 2ch;
+  // margin-bottom: 2ch;
 }
 
 .past-events { margin: 0 1.5% 0 7.5%; }
+
+.title-underline {
+  @include shift(1);
+  @include span-columns(5);
+  margin-bottom: 2ch;
+  position: relative;
+}

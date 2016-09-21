@@ -65,8 +65,17 @@
       width: 43px;      // Magic
     }
 
+    .input-underline {
+      @include shift(1);
+      @include span-columns(5);
+    }
+
     .section-number {
       @include span-columns(1);
+    }
+
+    .title-underline {
+      @include shift(1);
     }
   }
 }

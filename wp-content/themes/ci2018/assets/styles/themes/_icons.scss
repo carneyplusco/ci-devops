@@ -1,8 +1,11 @@
 #ajax-results {
-  background: url("../../assets/icons/uEA01-ci-loop.svg") no-repeat top left;
-  background-position: left center;
-  background-size: 0.85em;
-  padding-left: 8.7613%;
+  // background: url("../../assets/icons/uEA01-ci-loop.svg") no-repeat top left;
+  // background-position: left center;
+  // background-size: 0.85em;
+  // padding-left: 8.7613%;
+  // @include span-columns(6);
+  .icon { @include span-columns(1); }
+  a { @include span-columns(5); }
 
   &:hover { cursor: pointer; }
 }

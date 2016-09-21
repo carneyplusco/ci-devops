@@ -15,3 +15,4 @@
   ?>
   <a class="back-button" href="/">BACK</a>
 </section>
+<span class="title-underline"></span>
