@@ -4,23 +4,24 @@
     if($('body').is('.search')) {
       var input = $('.search-form input');
 
-      if (input.length != 0) {
-        if( input.val() == '' ) {
-          add_dashes(6);
-        } else {
-          add_dashes(input.val().length);
-        }
+      if( input.val() == '' ) {
+        add_dashes(6);
+      } else {
+        add_dashes(input.val().length);
       }
 
       input.on('input', function() {
         var length = input.val().length;
 
-        if (length == 0) {
-          add_dashes(6);
-        } else {
-          add_dashes(length);
-        }
+        if (length == 0) { add_dashes(6); }
+        else { add_dashes(length); }
       });
+    }
+    else if(!$('body').is('.home')) {
+      var title = $('#page-title').text().trim();
+      var length = title.length;
+      if (length > 16) { length = 16; }
+      $('.title-underline').html('-'.repeat(length));
     }
   });
 

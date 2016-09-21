@@ -15,9 +15,9 @@
     $title_length = strlen($title);
     echo '<span class="section-number">' . $category_number . '.</span><a id="page-title" href="">' . $title . '</a>';
   ?>
-  <span class="title-underline"></span>
   <a class="back-button" href="/">BACK</a>
 </section>
+<span class="title-underline"></span>
 
 <?php $count = $category->category_count; ?>
 <?php while (have_posts()) : the_post(); ?>
