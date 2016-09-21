@@ -1,18 +1,12 @@
 #ajax-results {
-  // background: url("../../assets/icons/uEA01-ci-loop.svg") no-repeat top left;
-  // background-position: left center;
-  // background-size: 0.85em;
-  // padding-left: 8.7613%;
-  // @include span-columns(6);
-  .icon { @include span-columns(1); }
   a { @include span-columns(5); }
+  .icon { @include span-columns(1); }
 
   &:hover { cursor: pointer; }
 }
 
 body.home {
   .content {
-    // background: url('../../assets/images/CI5718/ci-c.svg') no-repeat top;
     background-position: center;
     background-size: 90% 90%;
   }
@@ -28,8 +22,6 @@ body.home {
   padding-top: 0.55rem;
 }
 
-.icon-search {
-  height: 1.5ch;
-}
+.icon-search { height: 1.5ch; }
 
 .up-arrow { content: url('../../assets/icons/uEA03-ci-arrow-up.svg'); }
