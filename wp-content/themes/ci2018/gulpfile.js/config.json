@@ -23,7 +23,10 @@
       "entries": {
         "main": [
           "./main.js",
-          "./home-bg.js"
+          "./home-bg.js",
+          "./es-client.js",
+          "./input-underline.js",
+          "./programs.js"
         ]
       },
       "extensions": ["js"]
