@@ -69,6 +69,8 @@
       @include span-columns(5);
     }
 
+    .no-results { @include shift(1); }
+
     .section-number {
       @include span-columns(1);
     }
