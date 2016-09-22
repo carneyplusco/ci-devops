@@ -24,9 +24,11 @@
         "main": [
           "./main.js",
           "./home-bg.js",
-          "./es-client.js",
           "./input-underline.js",
           "./programs.js"
+        ],
+        "es-client": [
+          "./es-client.js"
         ]
       },
       "extensions": ["js"]

@@ -1,0 +1,22 @@
+<article>
+  <aside>
+    <span>{{ id }}</span>
+  </aside>
+  <section>
+    <header>
+      <p class="entry-title">
+        {{ title }}
+      </p>
+    </header>
+    <span>INTERNATIONALS:</span>
+    <ul class="entry-summary">
+      {{ #internationals }}
+        <li>
+          <span>{{ name }}</span>
+          <p>ROLE(S): {{ roles }}</p>
+        </li>
+      {{ /internationals }}
+    </ul>
+    <!--img src="/wp-content/themes/ci2018/assets/images/blue-texture.png" data-featherlight="/wp-content/themes/ci2018/assets/images/blue-texture.png"-->
+  </section>
+</article>

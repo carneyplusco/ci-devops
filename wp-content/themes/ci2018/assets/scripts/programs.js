@@ -58,7 +58,7 @@
   }
 
   function loadResultTemplate() {
-    return $.get('/wp-content/themes/ci2018/assets/templates/programs.mst', function(temp) {
+    return $.get('/wp-content/themes/ci2018/templates/programs.mst', function(temp) {
       return temp;
     });
   }

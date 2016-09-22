@@ -1,0 +1,9 @@
+<article>
+  <header>
+    <a href="{{ url }}" class="entry-title">{{ name }}</a>
+    <span class="external-link-arrow"></span>
+    <br><span>{{ date }}</span>
+    <br><span>{{ time }}</span>
+  </header>
+  <br><p>{{ description }} <a href="{{ url }}">READ MORE</a></p>
+</article>

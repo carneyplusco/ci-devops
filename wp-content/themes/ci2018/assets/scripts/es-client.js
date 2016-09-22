@@ -25,7 +25,7 @@
     $('.search-form').submit(function(e) {
       e.preventDefault();
       query = $(this).find('input').val();
-      window.location = '/?s=' + query;
+      window.location = '/search/' + query;
     });
 
     // "LOAD MORE" listener
@@ -82,7 +82,7 @@
   }
 
   function loadResultTemplate() {
-    return $.get('wp-content/themes/ci2018/assets/templates/search-result.mst', function(temp) {
+    return $.get('/wp-content/themes/ci2018/templates/search-result.mst', function(temp) {
       return temp;
     });
   }

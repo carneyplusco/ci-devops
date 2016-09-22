@@ -120,15 +120,6 @@ input[type="search"] {
   &:focus { cursor: text; }
 }
 
-.home {
-  input { margin-left: 0; }
-
-  .icon {
-    margin-right: 0;
-    width: 50px;
-  }
-}
-
 // Placeholder for text inputs should be the same color as normal font,
 //  in keeping with the typewriter theme
 ::-webkit-input-placeholder {

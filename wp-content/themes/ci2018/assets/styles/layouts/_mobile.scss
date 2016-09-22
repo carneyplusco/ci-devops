@@ -47,7 +47,7 @@
       form {
         .icon {
           @include span-columns(1);
-          padding-top: .45rem;      // Magic
+          // padding-top: .45rem;      // Magic
 
           .icon-search {
             height: 1.4ch;      // Magic
