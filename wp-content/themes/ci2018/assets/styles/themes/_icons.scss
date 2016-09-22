@@ -13,15 +13,20 @@ body.home {
 }
 
 .external-link-arrow {
-  content: url('../../assets/icons/uEA04-ci-arrow-external.svg');
+  content: url('../icons/uEA04-ci-arrow-external.svg');
   width: 9px;
 }
 
 .icon {
   @include span-columns(1);
-  padding-top: 0.55rem;
+  padding-top: 0.22rem;
+
+  &:before { content: none; }
 }
 
-.icon-search { height: 1.5ch; }
+.icon-search {
+  content: url('../images/ci-search.svg');
+  height: 1.4ch;
+}
 
-.up-arrow { content: url('../../assets/icons/uEA03-ci-arrow-up.svg'); }
+.up-arrow { content: url('../icons/uEA03-ci-arrow-up.svg'); }
