@@ -13,3 +13,8 @@ body.search {
   top: -7px;
   white-space: nowrap;
 }
+
+.no-results {
+  @include shift(1);
+  margin-top: 5%;
+}

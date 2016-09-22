@@ -66,7 +66,7 @@
   function displayResults(results) {
     if ($(results).length == 0) {
       $('#ajax-results').hide();
-      $('#search-results').append('<p>No results found.</p>');
+      $('#search-results').append('<p class="no-results">No results found.</p>');
     } else {
       $(results).each(function(i, el) {
         var result = el['_source'];
