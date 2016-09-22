@@ -108,8 +108,6 @@ function assets() {
   wp_enqueue_script('mustache', '//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js');
   wp_enqueue_script('featherlight', '//cdnjs.cloudflare.com/ajax/libs/featherlight/1.5.0/featherlight.min.js', false, null);
   wp_enqueue_script('es-client', Assets\asset_path('scripts/es-client.js'), [], null, true);
-  // wp_enqueue_script('input-underline', get_stylesheet_directory_uri() . '/assets/scripts/input-underline.js', [], null, true);
-  // wp_enqueue_script('ajax-programs', get_stylesheet_directory_uri() . '/assets/scripts/programs.js', [], null, true);
 
   // Not necessary if not searching WP posts
   wp_localize_script('es-client', 'esclient', array(

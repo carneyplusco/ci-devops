@@ -1,6 +1,13 @@
 #ajax-results {
   a { @include span-columns(5); }
-  .icon { @include span-columns(1); }
+  .icon {
+    @include span-columns(1);
+    padding-top: 0;
+  }
+  .icon-loop {
+    content: url('../images/ci-loop.svg');
+    height: 1.4ch;
+  }
 
   &:hover { cursor: pointer; }
 }
