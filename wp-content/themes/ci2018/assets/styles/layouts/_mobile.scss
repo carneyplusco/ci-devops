@@ -64,6 +64,10 @@
       width: 43px;      // Magic
     }
 
+    #ajax-results .icon {
+      @include span-columns(1);
+    }
+
     .input-underline {
       @include shift(1);
       @include span-columns(5);
