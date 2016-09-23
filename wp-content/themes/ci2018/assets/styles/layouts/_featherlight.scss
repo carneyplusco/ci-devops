@@ -1,0 +1,14 @@
+.featherlight {
+  margin: 5vh 4vw;
+  padding: 3em;
+
+  &:last-of-type {
+    background: none;
+  }
+
+  .featherlight-content {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+}

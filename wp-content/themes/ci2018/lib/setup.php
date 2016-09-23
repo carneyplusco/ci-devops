@@ -96,7 +96,7 @@ function display_sidebar() {
  */
 function assets() {
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
-  wp_enqueue_style('featherlight', '//cdnjs.cloudflare.com/ajax/libs/featherlight/1.5.0/featherlight.min.css', false, null);
+  // wp_enqueue_style('featherlight', '//cdnjs.cloudflare.com/ajax/libs/featherlight/1.5.0/featherlight.min.css', false, null);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');

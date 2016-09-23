@@ -1,13 +1,16 @@
 (function($) {
 
   $(document).ready(function() {
-    console.log($('img'));
 
     $('img').on('click', function() {
       if(!$(this).is('.featherlight-inner')) {
-        $.featherlight($(this));
+        $.featherlight($(this), {
+            openSpeed: 0,
+            closeSpeed: 0
+        });
       }
     });
+
   });
 
 })(jQuery);
