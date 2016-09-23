@@ -23,6 +23,7 @@
       "entries": {
         "main": [
           "./main.js",
+          "./add-lightbox.js",
           "./home-bg.js",
           "./input-underline.js",
           "./programs.js"
