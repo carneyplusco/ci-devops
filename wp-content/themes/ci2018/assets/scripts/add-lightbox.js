@@ -5,8 +5,9 @@
     $('img').on('click', function() {
       if(!$(this).is('.featherlight-inner')) {
         $.featherlight($(this), {
-            openSpeed: 0,
-            closeSpeed: 0
+            closeOnClick: 'anywhere',
+            closeSpeed: 0,
+            openSpeed: 0
         });
       }
     });
