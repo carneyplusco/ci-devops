@@ -10,7 +10,7 @@
 
 <?php
   if (has_nav_menu('primary_navigation')) :
-    wp_nav_menu(['theme_location' => 'primary_navigation', 'container' => '', 'menu_class' => '', 'items_wrap' => '<ol id="%!$s" class="%2$s">%3$s</ol>']);
+    wp_nav_menu(['theme_location' => 'primary_navigation', 'container' => '', 'menu_class' => 'main-nav', 'items_wrap' => '<ol id="%1$s" class="%2$s">%3$s</ol>']);
   endif;
 ?>
 
