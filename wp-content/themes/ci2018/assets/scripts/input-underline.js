@@ -17,12 +17,6 @@
         else { add_dashes(length); }
       });
     }
-    else if(!$('body').is('.home')) {
-      var title = $('#page-title').text().trim();
-      var length = title.length;
-      if (length > 16) { length = 16; }
-      $('.title-underline').html('-'.repeat(length));
-    }
   });
 
   function add_dashes(amount) {

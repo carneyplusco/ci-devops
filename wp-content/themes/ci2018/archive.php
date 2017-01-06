@@ -1,40 +1,25 @@
-<?php $category = get_the_category()[0]; ?>
-<?php $menu_items = wp_get_nav_menu_items('Home Nav'); ?>
 <?php
-  $category_number = 0;
-  foreach ($menu_items as $key => $value) {
-    if (strtoupper($value->title) == strtoupper($category->name)) {
-      $category_number = $key + 1;
-    }
-  }
+  use Roots\Sage\Extras;
+  $category = get_the_category()[0];
+  $category_number = Extras\menu_number('Home Nav', $category->name);
 ?>
 
 <section class="page-header">
-  <?php
-    $title = strtoupper(wp_title('', false, 'right'));
-    $title_length = strlen($title);
-    echo '<span class="section-number">' . $category_number . '.</span><a id="page-title" href="">' . $title . '</a>';
-  ?>
-  <a class="back-button" href="/">BACK</a>
+  <span class="section-number"><?= $category_number ?>.</span>
+  <h1 class="page-header__title underline"><a id="page-title" href="<?= get_the_permalink() ?>"><?= $category->name ?></a></h1>
+  <a class="page-header__back-button" href="/">Back</a>
 </section>
-<span class="title-underline"></span>
 
-<?php $count = $category->category_count; ?>
-<?php while (have_posts()) : the_post(); ?>
-  <article>
-    <aside>
-      <span><?php echo $category_number . '.' . $count; ?></span>
-    </aside>
-    <section>
-      <header>
-        <p class="entry-title">
-          <?php the_title(); ?>
-        </p>
-      </header>
-      <p>
-        <?php the_content(); ?>
-      </p>
-    </section>
-  </article>
-  <?php $count -= 1; ?>
-<?php endwhile; ?>
+<section class="page-content">
+  <div class="article-list">
+    <?php $count = $category->category_count; ?>
+    <?php while (have_posts()) : the_post(); ?>
+      <span class="article-list__section-number"><?= $category_number .'.'. $count-- ?></span>
+      <div class="article-item">
+        <h2 class="article-item__title"><a href="<?= get_the_permalink() ?>"><?php the_title(); ?></a></h2>
+        <h3 class="article-item__date"><?php the_time("d M Y"); ?></h2>
+        <?php the_excerpt(); ?>
+      </div>
+    <?php endwhile; ?>
+  </div>
+</section>

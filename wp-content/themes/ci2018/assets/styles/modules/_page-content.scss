@@ -1,0 +1,8 @@
+.page-content {
+  position: relative;
+  @include span-columns(10);
+
+  &__body {
+    margin-left: 50px;
+  }
+}

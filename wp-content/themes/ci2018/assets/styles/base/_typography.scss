@@ -4,10 +4,15 @@
 body {
   -webkit-font-smoothing: antialiased;
   background-color: $base-background-color;
+  background-image: url('../images/blue-texture.png');
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
+  font-weight: 600;
   line-height: $base-line-height;
+  &#tinymce {
+    background-image: none;
+  }
 }
 
 .accent-text {
@@ -25,12 +30,12 @@ h6 {
   font-size: 1em;
   font-family: $base-font-family;
   font-weight: 600;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
 }
 
 p {
-  margin: 0 0 ($base-spacing / 2);
+  margin: 0 0 $base-spacing 0;
 }
 
 a {
@@ -40,6 +45,7 @@ a {
 
   &:hover {
     color: $hover-link-color;
+    text-decoration: underline;
   }
 
   &:active,

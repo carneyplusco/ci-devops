@@ -36,7 +36,11 @@ body.home {
   height: 1.4ch;
 }
 
-.up-arrow { content: url('../images/ci-arrow-up.svg'); }
+.up-arrow {
+  content: url('../images/ci-arrow-up.svg');
+  width: 10px;
+  padding-top: 0.25rem;
+}
 
 .external-link:after {
   content: url('../images/ci-arrow-external.svg');

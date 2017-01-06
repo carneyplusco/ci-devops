@@ -115,3 +115,17 @@ function assets() {
   ));
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+// Removes the excerpt "Read More" link
+function ci_auto_excerpt_link($more) {
+  return '';
+}
+add_filter('excerpt_more', __NAMESPACE__ . '\\ci_auto_excerpt_link');
+
+// Adds "Read More" link to excerpt
+function ci_excerpt_more($excerpt) {
+  global $post;
+	$excerpt .= ' <a class="moretag" href="'. get_permalink($post->ID) . '">Read more</a>';
+  return $excerpt;
+}
+add_filter('get_the_excerpt', __NAMESPACE__ . '\\ci_excerpt_more');
