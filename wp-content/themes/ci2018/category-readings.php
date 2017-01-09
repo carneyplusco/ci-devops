@@ -6,7 +6,7 @@
 
 <section class="page-header">
   <span class="section-number"><?= $category_number ?>.</span>
-  <h1 class="page-header__title underline"><?php the_category(' ') ?></h1>
+  <h1 class="page-header__title underline"><a id="page-title" href="<?= get_the_permalink() ?>"><?= $category->name ?></a></h1>
   <a class="page-header__back-button" href="/">Back</a>
 </section>
 
@@ -14,11 +14,12 @@
   <div class="article-list">
     <?php $count = $category->category_count; ?>
     <?php while (have_posts()) : the_post(); ?>
+      <?php $pdf_link = get_field('pdf_link'); ?>
       <span class="article-list__section-number"><?= $category_number .'.'. $count-- ?></span>
       <div class="article-item">
-        <h2 class="article-item__title"><a href="<?= get_the_permalink() ?>"><?php the_title(); ?></a></h2>
-        <h3 class="article-item__date"><?php the_time("d M Y"); ?></h2>
-        <?php the_excerpt(); ?>
+        <h2 class="article-item__author"><?php the_field('author_name') ?>
+        <h2 class="article-item__title"><a href="<?= $pdf_link['url'] ?>" class="external-link"><?php the_title(); ?></a></h2>
+        <h3 class="article-item__date"><?php the_field('publication_date'); ?></h2>
       </div>
     <?php endwhile; ?>
   </div>

@@ -10,6 +10,8 @@
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
+import _ from 'lodash';
+
 (function($) {
 
   // Use this variable to set up the common and page specific functions. If you
@@ -19,6 +21,10 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        var bg_classes = ['ci2008', 'ci2013'];
+        $('body').addClass(_.sample(bg_classes));
+
+        // store bg_class in local/session storage to persist across page loads
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
