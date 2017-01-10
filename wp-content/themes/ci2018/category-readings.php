@@ -6,7 +6,7 @@
 
 <section class="page-header">
   <span class="section-number"><?= $category_number ?>.</span>
-  <h1 class="page-header__title underline"><a id="page-title" href="<?= get_the_permalink() ?>"><?= $category->name ?></a></h1>
+  <h1 class="page-header__title underline"><?php the_category(' ') ?></h1>
   <a class="page-header__back-button" href="/">Back</a>
 </section>
 

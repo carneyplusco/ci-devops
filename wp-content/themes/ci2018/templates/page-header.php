@@ -6,6 +6,6 @@
 
 <section class="page-header">
   <span class="section-number"><?= $title_number ?>.</span>
-  <h1 class="page-header__title underline"><a id="page-title" href="<?= get_the_permalink() ?>"><?= $title ?></a></h1>
+  <h1 class="page-header__title underline"><a href="<?= get_the_permalink() ?>"><?= $title ?></a></h1>
   <a class="page-header__back-button" href="/">Back</a>
 </section>

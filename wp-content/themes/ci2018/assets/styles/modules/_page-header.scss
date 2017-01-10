@@ -5,12 +5,12 @@
     display: inline-block;
     &.underline {
       margin-bottom: $small-spacing;
-      a {
+      a, .page-title {
         @extend %dash-underline;
         padding-bottom: 0.875em;
       }
     }
-    a {
+    a, .page-title {
       margin-left: 50px;
       text-transform: uppercase;
     }

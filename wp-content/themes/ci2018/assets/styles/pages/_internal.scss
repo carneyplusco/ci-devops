@@ -4,6 +4,7 @@
 
 div.wrap.container {
   background: white;
+  display: flex;
   margin: 3rem;
   min-height: 90vh;
   padding: 3em;
@@ -21,14 +22,6 @@ header {
 
 main {
   @include span-columns(9);
-
-  // .page-content {
-  //   position: relative;
-  //   @include span-columns(9);
-  //   &__body {
-  //     margin-left: 50px;
-  //   }
-  // }
 
   article {
     @include span-columns(12);
@@ -64,7 +57,10 @@ main {
 
 
 
-.past-events { margin: 0 1.5% 0 7.5%; }
+.past-events {
+  margin-left: 50px;
+  text-transform: uppercase;
+}
 
 .title-underline {
   @include shift(1);

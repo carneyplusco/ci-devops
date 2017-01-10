@@ -19,8 +19,9 @@ body.home {
   }
 }
 
-.external-link-arrow {
+.external-link-arrow:after {
   content: url('../images/ci-arrow-external.svg');
+  display: inline-block;
   width: 9px;
 }
 
@@ -31,15 +32,16 @@ body.home {
   &:before { content: none; }
 }
 
-.icon-search {
+.icon-search:after {
   content: url('../images/ci-search.svg');
-  height: 1.4ch;
+  display: inline-block;
+  width: 10px;
 }
 
-.up-arrow {
+.up-arrow:after {
   content: url('../images/ci-arrow-up.svg');
+  display: inline-block;
   width: 10px;
-  padding-top: 0.25rem;
 }
 
 .external-link:after {

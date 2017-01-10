@@ -1,23 +1,35 @@
-(function($) {
+const CycleLetters = (function($) {
 
-  $(document).ready(function() {
-    if ($('body').is('.home')) {
-      var characters = ["c", "i", "5", "7", "1", "8"],
-          i          = 1;
+  const characters = ['c', 'i', '5', '7', '1', '8'];
+  let step = 0;
 
-      $('.content').addClass("icon-c");
+  const getLetter = function() {
+    var char = step % characters.length;
+    return characters[char];
+  }
 
-      setInterval(function(){
-        if (i != 0) {
-          $('.content').removeClass("icon-" + characters[i-1]);
-        } else {
-          $('.content').removeClass("icon-" + characters[5]);
-        }
-        $('.content').addClass("icon-" + characters[i]);
+  const getNextLetter = function() {
+    step++;
+    return getLetter();
+  }
 
-        i = (i + 1) % 6;
-      }, 10000);
-    }
-  });
+  const run = function() {
+    const current_char = getLetter();
+    $('.content').addClass(`icon-${current_char}`);
+
+    setInterval(function() {
+      const current_char = getLetter();
+      $('.content').removeClass(`icon-${current_char}`);
+      const next_char = getNextLetter();
+      $('.content').addClass(`icon-${next_char}`);
+    }, 10000);
+  }
+
+  return {
+    run
+  }
 
 })(jQuery);
+
+
+export default CycleLetters;

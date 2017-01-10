@@ -2,7 +2,7 @@
   use Roots\Sage\Extras;
 
   $menu_items = wp_get_nav_menu_items('Home Nav');
-  $menu_number = Extras\menu_number('Home Nav', 'Travelogues');
+  $menu_number = Extras\menu_number('Home Nav', get_the_title());
 
   $ci_blog_category = 25;
   $posts = json_decode(file_get_contents("http://blog.cmoa.org/wp-json/wp/v2/posts?categories={$ci_blog_category}"));
