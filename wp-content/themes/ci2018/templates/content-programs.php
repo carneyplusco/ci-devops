@@ -23,7 +23,7 @@
       ?>
       <!-- <span class="article-list__section-number"><?= $menu_number .'.'. $post_count-- ?></span> -->
       <div class="article-item">
-        <h2 class="article-item__title"><a href="<?= $p->url ?>" class="external-link"><?= $p->name ?></a></h2>
+        <h2 class="article-item__title"><a href="<?= $p->url ?>" class="external-link"><?= $p->name ?><span class="screen-reader-text"> (Link opens on an external site)</span></a></h2>
         <h3 class="article-item__date"><?= $date->format("d M Y") ?><br /><?= $date->format("g a") ?></h2>
         <?= wpautop($excerpt) ?>
       </div>
