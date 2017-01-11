@@ -1,0 +1,31 @@
+.article-list {
+  &__section-number {
+    position: absolute;
+  }
+}
+
+.article-item {
+  margin-left: 50px;
+  margin-bottom: $base-spacing;
+
+  &__date {
+    margin-bottom: $base-spacing;
+  }
+
+  .moretag {
+    text-transform: uppercase;
+  }
+
+  &.international {
+    .article-item__author, .label {
+      text-transform: uppercase;
+    }
+    .entry-summary {
+      margin-top: $small-spacing;
+    }
+  }
+}
+
+.article-image {
+  margin-left: 50px;
+}

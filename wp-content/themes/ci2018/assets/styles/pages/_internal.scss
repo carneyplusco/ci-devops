@@ -4,33 +4,20 @@
 
 div.wrap.container {
   background: white;
-  display: inline-flex;
-  margin: 5vh 4vw;
+  display: flex;
+  margin: 3rem;
   min-height: 90vh;
   padding: 3em;
-  width: 92vw;
+  @include media($extra-small) {
+    margin: 2em;
+  }
 }
 
 div.content.row { width: 100%; }
 
-header {
-  .logotype { @include span-columns(2); }
-  .logo-address {
-    @include span-columns(7);
-    display: none;
-  }
-}
 
 main {
   @include span-columns(9);
-
-  .page-content {
-    position: relative;
-    @include span-columns(9);
-    &__body {
-      margin-left: 50px;
-    }
-  }
 
   article {
     @include span-columns(12);
@@ -60,26 +47,16 @@ main {
 
 .programs article { padding-left: 8.7613%; }
 
-#page-title {
-  margin-left: 50px;
-  padding-bottom: 0.875em;
-  background-image: linear-gradient(to right, #333 70%, rgba(255,255,255,0) 0%);
-  background-position: 2px bottom;
-  background-size: 8px 2px;
-  background-repeat: repeat-x;
-  text-transform: uppercase;
-}
-
 .section-number {
   position: absolute;
 }
 
-.page-header {
-  margin-bottom: 2em;
-  position: relative;
-}
 
-.past-events { margin: 0 1.5% 0 7.5%; }
+
+.past-events {
+  margin-left: 50px;
+  text-transform: uppercase;
+}
 
 .title-underline {
   @include shift(1);
@@ -88,4 +65,8 @@ main {
   margin-bottom: 2ch;
   position: relative;
   display: none;
+}
+
+.featherlight-close-icon {
+  border: none;
 }

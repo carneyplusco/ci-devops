@@ -96,7 +96,6 @@ function display_sidebar() {
  */
 function assets() {
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
-  // wp_enqueue_style('featherlight', '//cdnjs.cloudflare.com/ajax/libs/featherlight/1.5.0/featherlight.min.css', false, null);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
@@ -104,14 +103,45 @@ function assets() {
 
   wp_enqueue_script('common-scripts', Assets\asset_path('scripts/common.js'), [], null, true);
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
-  wp_enqueue_script('elasticsearch', '//cdnjs.cloudflare.com/ajax/libs/elasticsearch/11.0.1/elasticsearch.jquery.js');
-  wp_enqueue_script('mustache', '//cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js');
-  wp_enqueue_script('featherlight', '//cdnjs.cloudflare.com/ajax/libs/featherlight/1.5.0/featherlight.min.js', false, null);
-  wp_enqueue_script('es-client', Assets\asset_path('scripts/es-client.js'), [], null, true);
+  wp_enqueue_script('elasticsearch', Assets\asset_path('bower_components/elasticsearch/elasticsearch.jquery.js'), ['jquery'], null, true);
+  wp_enqueue_script('es-client', Assets\asset_path('scripts/es-client.js'), ['elasticsearch'], null, true);
 
   // Not necessary if not searching WP posts
   wp_localize_script('es-client', 'esclient', array(
-    'es_host' => ES_HOST
+    'es_host' => ES_HOST,
+    'template_dir' => get_template_directory_uri()
   ));
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+/**
+ * Theme extras: Featherlight
+ */
+function featherlight() {
+    // wp_enqueue_style('featherlight', Assets\asset_path('bower_components/featherlight/release/featherlight.min.css'), false, null);
+    // wp_enqueue_style('featherlight/gallery', Assets\asset_path('bower_components/featherlight/release/featherlight.gallery.min.css'), false, null);
+
+    wp_enqueue_script('featherlight', Assets\asset_path('bower_components/featherlight/release/featherlight.min.js'), ['jquery'], null, true);
+    // wp_enqueue_script('featherlight/gallery', Assets\asset_path('bower_components/featherlight/release/featherlight.gallery.min.js'), ['featherlight'], null, true);
+}
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\featherlight', 100);
+
+// Removes the excerpt "Read More" link
+function ci_auto_excerpt_link($more) {
+  return '';
+}
+add_filter('excerpt_more', __NAMESPACE__ . '\\ci_auto_excerpt_link');
+
+// Adds "Read More" link to excerpt
+function ci_excerpt_more($excerpt) {
+  global $post;
+	$excerpt .= ' <a class="moretag" href="'. get_permalink($post->ID) . '">Read more</a>';
+  return $excerpt;
+}
+add_filter('get_the_excerpt', __NAMESPACE__ . '\\ci_excerpt_more');
+
+// WordPress Magic
+function custom_search_endpoint() {
+  add_rewrite_endpoint('search', EP_PAGES);
+}
+add_action('init', __NAMESPACE__ . '\\custom_search_endpoint');

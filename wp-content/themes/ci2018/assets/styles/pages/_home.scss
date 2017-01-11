@@ -18,11 +18,19 @@
 }
 
 .home {
-  input { margin-left: 0; }
-
   .icon {
     margin-right: 0;
     padding-top: 0.2rem;
-    width: 50px;
+    width: 48px;
+  }
+
+  .search-form {
+    float: left;
+    @include media($extra-small) {
+      float: none;
+    }
+    input {
+      @extend %dash-underline;
+    }
   }
 }

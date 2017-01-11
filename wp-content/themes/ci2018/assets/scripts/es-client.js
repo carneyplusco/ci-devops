@@ -1,4 +1,6 @@
-(function($) {
+import Mustache from 'mustache';
+
+const Party = (function($) {
   var results_limit = 10;
   var current_result_index = 0;
   var result_template = loadResultTemplate();
@@ -14,82 +16,54 @@
     // If not search results page, redirect
     // If search results page, call query with pagination enabled
     $.when(result_template)
-    .then(function(data){
-      result_template = data;
-      if ( $('body').is('.search') ) {
-        search(client, query);
-      }
-    });
-
-    // Search field listener
-    $('.search-form').submit(function(e) {
-      e.preventDefault();
-      query = $(this).find('input').val();
-      window.location = '/search/' + query;
-    });
+      .then(function(data) {
+        result_template = data;
+        if($('body').is('.party-records') && query !== '') {
+          search(client, query);
+        }
+      });
 
     // "LOAD MORE" listener
-    $('#ajax-results').click(function(e){
+    $('#ajax-results').click(function(e) {
       e.preventDefault();
       current_result_index += results_limit;
       search(client, query);
     });
-
   });
-
-
 
   //
   // function definitions
   //
 
-  function appendToPage(result, template) {
-
-    var data = {
-      id: result.id,
-      internationals: [],
-      title: result.name.toUpperCase()
-    };
-
-    $(result.internationals).each(function(i, el){
-      data.internationals.push({
-        name: el.name.toUpperCase(),
-        roles: el.roles.join(', ')
-      });
-    });
-
-    var rendered = Mustache.render(template, data);
-    $('#search-results').append(rendered);
-
-  }
-
   function displayResults(results) {
     if ($(results).length == 0) {
-      $('#ajax-results').hide();
-      $('#search-results').append('<p class="no-results">No results found.</p>');
+      noResults();
     } else {
-      $(results).each(function(i, el) {
-        var result = el['_source'];
-        appendToPage(result, result_template);
-
-        if ($(results).length < results_limit) {
-          $('#ajax-results').hide();
-        } else {
-          $('#ajax-results').show();
+      var data = {
+        search_results: results.map(result => {
+          var { id, internationals, name: title } = result._source;
+          return { id, internationals, title };
+        }),
+        international_roles: function() {
+          return this.roles.join(', ')
         }
-      });
+      };
+      var rendered = Mustache.render(result_template, data);
+      $('#search-results').append(rendered);
+      $('#ajax-results').toggle($(results).length >= results_limit);
     }
   }
 
   function loadResultTemplate() {
-    return $.get('/wp-content/themes/ci2018/templates/search-result.mst', function(temp) {
-      return temp;
-    });
+    return $.get(`${esclient.template_dir}/templates/search-result.mst`, (template) => template);
   }
 
-  function resetResults() {
-    $('#search-results').empty();
-    current_result_index = 0;
+  function noResults() {
+    $('#ajax-results').hide();
+    $.get(`${esclient.template_dir}/templates/no-results.mst`, (template) => {
+      var rendered = Mustache.render(template);
+      $('#search-results').html(rendered);
+    });
   }
 
   function search(client, query) {
@@ -100,8 +74,8 @@
       body: {
         query: {
           "multi_match": {
-              "query": query,
-              "fields": ["name", "internationals.name", "internationals.roles"]
+            "query": query,
+            "fields": ["name", "internationals.name", "internationals.roles"]
           }
         }
       },
@@ -118,3 +92,5 @@
   }
 
 })(jQuery);
+
+export default Party;

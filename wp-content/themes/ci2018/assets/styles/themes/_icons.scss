@@ -1,12 +1,8 @@
 #ajax-results {
-  a { @include span-columns(5); }
-  .icon {
-    @include span-columns(1);
-    padding-top: 0;
-  }
-  .icon-loop {
+  .icon-loop:after {
     content: url('../images/ci-loop.svg');
-    height: 1.4ch;
+    display: inline-block;
+    width: 12px;
   }
 
   &:hover { cursor: pointer; }
@@ -19,8 +15,9 @@ body.home {
   }
 }
 
-.external-link-arrow {
+.external-link-arrow:after {
   content: url('../images/ci-arrow-external.svg');
+  display: inline-block;
   width: 9px;
 }
 
@@ -31,16 +28,29 @@ body.home {
   &:before { content: none; }
 }
 
-.icon-search {
+.icon-search:after {
   content: url('../images/ci-search.svg');
-  height: 1.4ch;
+  display: inline-block;
+  width: 10px;
+  margin-top: 3px;
+  @include media($extra-small) {
+    width: 8px;
+  }
 }
 
-.up-arrow { content: url('../images/ci-arrow-up.svg'); }
+.up-arrow:after {
+  content: url('../images/ci-arrow-up.svg');
+  display: inline-block;
+  width: 10px;
+
+}
 
 .external-link:after {
   content: url('../images/ci-arrow-external.svg');
   display: inline-block;
   width: 8px;
-  margin-left: 0.5em
+  margin-left: 0.5em;
+  @include media($extra-small) {
+    width: 6px;
+  }
 }

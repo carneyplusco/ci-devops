@@ -5,7 +5,7 @@
 ?>
 
 <?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', 'page'); ?>
+  <?php get_template_part('templates/content', 'home'); ?>
 <?php endwhile; ?>
 
 <?php
@@ -14,4 +14,5 @@
   endif;
 ?>
 
+<span class="section-number"><i class="icon-search"></i></span>
 <?php get_search_form(); ?>

@@ -10,6 +10,12 @@
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
+require('./polyfills');
+import _ from 'lodash';
+import store from 'store2';
+import CycleLetters from './home-bg';
+import Underliner from './input-underline';
+
 (function($) {
 
   // Use this variable to set up the common and page specific functions. If you
@@ -19,6 +25,15 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        const bg_classes = ['ci2008', 'ci2013'];
+        let selected_bg = _.sample(bg_classes);
+        if(store.session.has('bg')) {
+          selected_bg = store.session.get('bg')
+        }
+        $('body').addClass(selected_bg);
+
+        // store bg_class in session storage to persist across page loads
+        store.session('bg', selected_bg);
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -28,15 +43,20 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+        CycleLetters.run();
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
       }
     },
-    // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'search': {
       init: function() {
-        // JavaScript to be fired on the about us page
+        Underliner.init();
+      }
+    },
+    'party_records': {
+      init: function() {
+        Underliner.init();
       }
     }
   };
