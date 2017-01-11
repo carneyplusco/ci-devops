@@ -54,3 +54,15 @@ body.home {
     width: 6px;
   }
 }
+
+%pdf-link {
+  content: url('../images/ci-document.svg');
+  display: inline-block;
+  width: 10px;
+  margin-left: 0.5em;
+  vertical-align: text-bottom;
+  line-height: 12px;
+  @include media($extra-small) {
+    width: 8px;
+  }
+}
