@@ -7,7 +7,7 @@
 // iPad landscape & Desktop
 @include media($large) {
   body {
-    .logotype { @include span-columns(3); }
+    // .logotype { @include span-columns(3); }
     &.home .main { @include shift(3); }
   }
 }
@@ -18,8 +18,7 @@
 // iPhone landscape
 @include media($small) {
   body {
-    .logotype { @include span-columns(3); }
-    .logo-address { @include span-columns(3); }
+    // .logotype { @include span-columns(3); }
 
     &.home .main { @include shift(0); }
     .main {
@@ -32,9 +31,9 @@
 // iPhone portrait
 @include media($extra-small) {
   body {
-    font-size: 8pt;
+    font-size: 0.75em;
     .logotype { margin-right: 0; }
-    .logo-address { width: 55%; }
+    // .logo-address { width: 55%; }
 
     .main {
       @include span-columns(6);
@@ -52,10 +51,6 @@
             height: 1.4ch;      // Magic
           }
         }
-        input[type="search"] {
-          @include span-columns(5);
-          @include omega();
-        }
       }
     }
 
@@ -68,16 +63,9 @@
       @include span-columns(1);
     }
 
-    .input-underline {
-      @include shift(1);
-      @include span-columns(5);
-    }
-
-    .no-results { @include shift(1); }
-
-    .section-number {
-      @include span-columns(1);
-    }
+    // .section-number {
+    //   @include span-columns(1);
+    // }
 
     .title-underline {
       @include shift(1);

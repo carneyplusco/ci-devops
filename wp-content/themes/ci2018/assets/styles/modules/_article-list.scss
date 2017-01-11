@@ -15,6 +15,15 @@
   .moretag {
     text-transform: uppercase;
   }
+
+  &.international {
+    .article-item__author, .label {
+      text-transform: uppercase;
+    }
+    .entry-summary {
+      margin-top: $small-spacing;
+    }
+  }
 }
 
 .article-image {

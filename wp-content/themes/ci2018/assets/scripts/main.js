@@ -10,9 +10,11 @@
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
+require('./polyfills');
 import _ from 'lodash';
 import store from 'store2';
 import CycleLetters from './home-bg';
+import Underliner from './input-underline';
 
 (function($) {
 
@@ -45,6 +47,16 @@ import CycleLetters from './home-bg';
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+      }
+    },
+    'search': {
+      init: function() {
+        Underliner.init();
+      }
+    },
+    'party_records': {
+      init: function() {
+        Underliner.init();
       }
     }
   };

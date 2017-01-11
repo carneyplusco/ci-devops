@@ -8,17 +8,13 @@ div.wrap.container {
   margin: 3rem;
   min-height: 90vh;
   padding: 3em;
+  @include media($extra-small) {
+    margin: 2em;
+  }
 }
 
 div.content.row { width: 100%; }
 
-header {
-  .logotype { @include span-columns(2); }
-  .logo-address {
-    @include span-columns(7);
-    display: none;
-  }
-}
 
 main {
   @include span-columns(9);
@@ -69,4 +65,8 @@ main {
   margin-bottom: 2ch;
   position: relative;
   display: none;
+}
+
+.featherlight-close-icon {
+  border: none;
 }

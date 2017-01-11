@@ -20,8 +20,10 @@
 @import "base/buttons";
 
 // SHARED MODULES
+@import "modules/header";
 @import "modules/nav";
 @import "modules/sidebar";
+@import "modules/search-form";
 @import "modules/page-header";
 @import "modules/page-content";
 @import "modules/article-list";
@@ -29,7 +31,6 @@
 // PAGE MODULES
 @import "pages/home";
 @import "pages/internal";
-@import "pages/search";
 
 // THEMES
 @import "themes/icons";

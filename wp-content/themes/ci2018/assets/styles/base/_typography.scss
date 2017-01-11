@@ -15,6 +15,10 @@ body {
   &.ci2013 {
     background-image: url('../images/ci2013-bg.jpg');
     background-size: cover;
+    @include media($small) {
+      background-size: contain;
+      background-repeat: repeat-y;
+    }
   }
   &#tinymce {
     background-image: none;
