@@ -19,7 +19,7 @@
     <?php foreach($posts as $p): ?>
       <?php
         $date = new DateTime($p->start);
-        $excerpt = $p->excerpt.' <a class="moretag" href="'. $p->url . '">Read more</a>';
+        $excerpt = $p->excerpt.' <a class="moretag" href="'. $p->url . '">Read more <span class="screen-reader-text">about ' . $p->name . '</span></a>';
       ?>
       <!-- <span class="article-list__section-number"><?= $menu_number .'.'. $post_count-- ?></span> -->
       <div class="article-item">
