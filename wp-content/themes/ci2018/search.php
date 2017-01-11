@@ -1,4 +1,9 @@
 <section class="page-header">
+  <h1 class="page-header__title"><span class="page-title">Site Search</span></h1>
+  <a class="page-header__back-button" href="/">Back</a>
+</section>
+
+<section class="page-header">
   <span class="section-number"><i class="icon-search"></i></span>
   <?php get_search_form(); ?>
 </section>

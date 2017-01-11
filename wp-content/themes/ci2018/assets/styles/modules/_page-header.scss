@@ -1,6 +1,6 @@
 .page-header {
   margin-bottom: $base-spacing;
-  position: relative;
+  overflow: hidden;
   &__title {
     display: inline-block;
     &.underline {
