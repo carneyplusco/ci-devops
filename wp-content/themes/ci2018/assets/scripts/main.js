@@ -34,6 +34,8 @@ import Underliner from './input-underline';
 
         // store bg_class in session storage to persist across page loads
         store.session('bg', selected_bg);
+
+        Underliner.init();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -47,16 +49,6 @@ import Underliner from './input-underline';
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
-      }
-    },
-    'search': {
-      init: function() {
-        Underliner.init();
-      }
-    },
-    'party_records': {
-      init: function() {
-        Underliner.init();
       }
     }
   };

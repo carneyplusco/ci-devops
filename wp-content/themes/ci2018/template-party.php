@@ -11,10 +11,7 @@
 
 <section class="page-header">
   <span class="section-number"><i class="icon-search"></i></span>
-  <form class="search-form">
-    <input type="search" placeholder="<?= esc_attr_x( 'SEARCH', 'placeholder' ) ?>" value="<?= esc_attr(get_query_var( 'search' )) ?>" name="search" />
-    <span class="input-underline"></span>
-  </form>
+  <?php get_template_part('templates/party', 'searchform'); ?>
 </section>
 
 <section class="page-content">

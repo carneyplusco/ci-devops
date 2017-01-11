@@ -12,8 +12,10 @@
       <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
     </footer>
   </article>
+</section>
 
-  <?php if(have_rows('postcard')): ?>
+<?php if(have_rows('postcard')): ?>
+  <section class="page-content">
     <section class="page-header">
       <span class="section-number"></span>
       <h2 class="page-header__title underline"><span class="page-title">Postcards</span></h2>
@@ -31,5 +33,5 @@
         </div>
       <?php endwhile; ?>
     </div>
-  <?php endif; ?>
-</section>
+  </section>
+<?php endif; ?>
