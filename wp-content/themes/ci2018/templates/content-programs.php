@@ -39,7 +39,7 @@
   <?php $post_count = count($program_archives->posts); ?>
   <section class="page-header">
     <span class="section-number"></span>
-    <h2 class="page-header__title underline"><span class="page-title">Past Events</span></h2>
+    <h2 class="page-header__title underline"><span class="page-title">Past Programs</span></h2>
   </section>
 
   <div class="article-list">

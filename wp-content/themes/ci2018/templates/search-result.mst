@@ -1,5 +1,4 @@
 {{ #search_results }}
-  <span class="article-list__section-number">{{ id }}</span>
   <div class="article-item international">
     <h2 class="article-item__author">{{ title }}</h2>
     <span class="label">Internationals:</span>
