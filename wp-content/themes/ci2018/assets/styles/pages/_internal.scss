@@ -67,6 +67,25 @@ main {
   display: none;
 }
 
+// From https://codex.wordpress.org/CSS
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	clip: auto !important;
+	color: inherit;
+	background-color: inherit;
+	display: inline-block;
+	height: auto;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
 .featherlight-close-icon {
   border: none;
 }
