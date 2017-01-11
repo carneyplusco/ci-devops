@@ -29,8 +29,5 @@
     @include media($extra-small) {
       float: none;
     }
-    input {
-      @extend %dash-underline;
-    }
   }
 }
