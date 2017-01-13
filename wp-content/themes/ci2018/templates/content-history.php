@@ -25,7 +25,11 @@
       <?php while(have_rows('postcard')): the_row(); ?>
         <?php $image = get_sub_field('image'); ?>
         <div class="article-image">
-          <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>" />
+          <figure>
+            <a href="<?= $image['url'] ?>">
+              <img src="<?= $image['sizes']['medium_large'] ?>" alt="<?= $image['alt'] ?>" />
+            </a>
+          </figure>
         </div>
         <span class="article-list__section-number"><?= $title_number .'.'. $row_count-- ?></span>
         <div class="article-item">

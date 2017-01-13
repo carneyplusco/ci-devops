@@ -1,8 +1,10 @@
+<?php use Roots\Sage\Extras; ?>
+
 <?php while (have_posts()) : the_post(); ?>
   <section class="page-header">
     <span class="section-number"><i class="up-arrow"></i></span>
     <h1 class="page-header__title"><?php the_category(' ') ?></h1>
-    <a class="page-header__back-button" href="/">Back</a>
+    <a class="page-header__back-button" href="<?= Extras\back_link() ?>">Back</a>
   </section>
 
   <section class="page-content">

@@ -102,12 +102,11 @@ function assets() {
   }
 
   wp_enqueue_script('common-scripts', Assets\asset_path('scripts/common.js'), [], null, true);
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
   wp_enqueue_script('elasticsearch', Assets\asset_path('bower_components/elasticsearch/elasticsearch.jquery.js'), ['jquery'], null, true);
-  wp_enqueue_script('es-client', Assets\asset_path('scripts/es-client.js'), ['elasticsearch'], null, true);
+  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery', 'elasticsearch'], null, true);
 
   // Not necessary if not searching WP posts
-  wp_localize_script('es-client', 'esclient', array(
+  wp_localize_script('sage/js', 'esclient', array(
     'es_host' => ES_HOST,
     'template_dir' => get_template_directory_uri()
   ));

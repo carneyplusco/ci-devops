@@ -37,6 +37,12 @@ import Party from './es-client';
         store.session('bg', selected_bg);
 
         Underliner.init();
+
+        $('figure a').featherlight({
+          closeOnClick: 'anywhere',
+          closeSpeed: 0,
+          openSpeed: 0
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

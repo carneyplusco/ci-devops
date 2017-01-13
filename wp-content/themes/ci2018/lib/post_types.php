@@ -47,6 +47,48 @@ function create_post_types() {
       'menu_icon' => 'dashicons-art'
     )
   );
+
+  register_post_type('participant',
+    array(
+      'labels' => array(
+        'name' => __('Participants'),
+        'singular_name' => __('Participant'),
+        'add_new' => __('Add New' ),
+        'add_new_item' => __('Add New Participant'),
+        'edit' => __('Edit'),
+        'edit_item' => __('Edit Participant'),
+        'new_item' => __('New Participant'),
+        'view' => __('View Participant'),
+        'view_item' => __('View Participant'),
+        'search_items' => __('Search Participants'),
+        'all_items' => __('All Participants'),
+        'not_found' => __('No participants found.'),
+        'not_found_in_trash' => __('No participants found in Trash')
+      ),
+      'public' => true,
+      'hierarchical' => true,
+      'supports' => array(
+        'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt'
+      ),
+      'map_meta_cap' => true,
+      'capabilities' => array(
+        'read_posts' => 'read_participants',
+        'read_private_posts' => 'read_private_participants',
+        'edit_posts' => 'edit_participants',
+        'edit_others_posts' => 'edit_others_participants',
+        'edit_private_posts' => 'edit_private_participants',
+        'edit_published_posts' => 'edit_participants',
+        'publish_posts' => 'publish_participants',
+        'create_posts' => 'edit_participants',
+        'delete_posts' => 'delete_participants',
+        'delete_published_posts' => 'delete_participants',
+        'delete_others_posts' => 'delete_others_participants',
+        'delete_private_posts' => 'delete_private_participants',
+      ),
+      'rewrite' => array('slug' => 'participant', 'with_front' => false),
+      'menu_icon' => 'dashicons-businessman'
+    )
+  );
 }
 add_action('init', __NAMESPACE__ . '\\create_post_types');
 

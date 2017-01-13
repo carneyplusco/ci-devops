@@ -7,7 +7,7 @@
 <section class="page-header">
   <span class="section-number"><?= $category_number ?>.</span>
   <h1 class="page-header__title underline"><?php the_category(' ') ?></h1>
-  <a class="page-header__back-button" href="/">Back</a>
+  <a class="page-header__back-button" href="<?= Extras\back_link() ?>">Back</a>
 </section>
 
 <section class="page-content">

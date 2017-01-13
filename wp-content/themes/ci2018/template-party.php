@@ -2,11 +2,13 @@
 /**
  * Template Name: Party Records
  */
+
+use Roots\Sage\Extras;
 ?>
 
 <section class="page-header">
   <h1 class="page-header__title"><span class="page-title">Party Records Search</span></h1>
-  <a class="page-header__back-button" href="/">Back</a>
+  <a class="page-header__back-button" href="<?= Extras\back_link() ?>">Back</a>
 </section>
 
 <section class="page-header">

@@ -44,3 +44,10 @@ function menu_number($menu_name, $item_name) {
 
   return $title_number !== FALSE ? $title_number + 1 : 0;
 }
+
+/**
+ * Add link to referrer if available, home otherwise
+ */
+function back_link() {
+  return wp_get_referer() ?: home_url();
+}
