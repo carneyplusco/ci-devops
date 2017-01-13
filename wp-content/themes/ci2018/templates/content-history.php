@@ -35,3 +35,10 @@
     </div>
   </section>
 <?php endif; ?>
+
+<section class="page-content">
+  <section class="page-header">
+    <span class="section-number"><i class="icon-search"></i></span>
+    <?php get_template_part('templates/party', 'searchform'); ?>
+  </section>
+</section>

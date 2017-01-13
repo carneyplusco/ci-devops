@@ -3,18 +3,12 @@ const Underliner = (function($) {
   function init() {
     var input = $('.search-form input');
 
-    if( input.val() == '' ) {
-      add_dashes(6);
-    } else {
-      add_dashes(input.val().length);
-    }
-
     input.on('input', function() {
-      var length = input.val().length;
-
-      if (length == 0) { add_dashes(6); }
-      else { add_dashes(length); }
+      var length = $(this).val().length === 0 ? $(this).attr('placeholder').length : $(this).val().length;
+      add_dashes(length);
     });
+
+    input.trigger('input');
   }
 
   function add_dashes(amount) {

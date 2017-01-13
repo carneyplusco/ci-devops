@@ -3,9 +3,12 @@ import Mustache from 'mustache';
 const Party = (function($) {
   var results_limit = 10;
   var current_result_index = 0;
-  var result_template = loadResultTemplate();
+  var result_template;
+  var esclient;
 
-  $(document).ready(function() {
+  function start(client_config) {
+    esclient = client_config;
+
     // ElasticSearch JQuery client
     var client = new $.es.Client({
       host: esclient.es_host
@@ -15,10 +18,10 @@ const Party = (function($) {
 
     // If not search results page, redirect
     // If search results page, call query with pagination enabled
-    $.when(result_template)
+    $.when(loadResultTemplate())
       .then(function(data) {
         result_template = data;
-        if($('body').is('.party-records') && query !== '') {
+        if(query !== '') {
           search(client, query);
         }
       });
@@ -29,7 +32,7 @@ const Party = (function($) {
       current_result_index += results_limit;
       search(client, query);
     });
-  });
+  }
 
   //
   // function definitions
@@ -89,6 +92,10 @@ const Party = (function($) {
     }, function (err) {
       console.trace(err.message);
     });
+  }
+
+  return {
+    start
   }
 
 })(jQuery);
