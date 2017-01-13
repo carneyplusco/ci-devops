@@ -15,6 +15,7 @@ import _ from 'lodash';
 import store from 'store2';
 import CycleLetters from './home-bg';
 import Underliner from './input-underline';
+import Party from './es-client';
 
 (function($) {
 
@@ -49,6 +50,11 @@ import Underliner from './input-underline';
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
+      }
+    },
+    'party_records': {
+      init: function() {
+        Party.start(window.esclient);
       }
     }
   };
