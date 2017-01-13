@@ -22,13 +22,7 @@
       "extractSharedJs": true,
       "entries": {
         "main": [
-          "./main.js",
-          "./add-lightbox.js",
-          "./home-bg.js",
-          "./input-underline.js"
-        ],
-        "es-client": [
-          "./es-client.js"
+          "./main.js"
         ]
       },
       "extensions": ["js"]

@@ -2,6 +2,9 @@
   &__section-number {
     position: absolute;
   }
+  &.-participants {
+    margin-bottom: $base-spacing;
+  }
 }
 
 .article-item {
@@ -30,6 +33,12 @@
   }
 }
 
-.article-image {
+.article-image, .article-link {
   margin-left: 50px;
+}
+
+.article-image {
+  figure {
+    margin-bottom: 0;
+  }
 }
