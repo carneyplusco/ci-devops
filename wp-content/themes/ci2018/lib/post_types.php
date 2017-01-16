@@ -92,4 +92,31 @@ function create_post_types() {
 }
 add_action('init', __NAMESPACE__ . '\\create_post_types');
 
+
+function program_taxonomies() {
+  register_taxonomy(
+    'categories',
+    'program',
+    array(
+      'labels' => array(
+        'name' => __('Categories'),
+        'singular_name' => __('Category'),
+        'search_items' => __('Search Categories'),
+        'all_items' => __('All Categories'),
+        'parent_item' => __('Parent Category'),
+        'parent_item_colon' => __('Parent Category:'),
+        'edit_item' => __('Edit Category'),
+        'update_item' => __('Update Category'),
+        'add_new_item' => __('Add New Category'),
+        'new_item_name' => __('New Category Name'),
+        'menu_name' => __('Categories'),
+        'not_found' => __('No categories found.'),
+        'not_found_in_trash' => __('No categories found in Trash')
+      ),
+      'hierarchical' => true,
+      'rewrite' => array('slug' => 'category', 'with_front' => false)
+    )
+  );
+}
+add_action('init', __NAMESPACE__ . '\\program_taxonomies');
 ?>
