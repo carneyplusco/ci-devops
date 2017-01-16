@@ -6,12 +6,6 @@
 
   $posts = json_decode(file_get_contents("http://cmoa.org/wp-json/events/v1/categories/carnegie-international"));
   $post_count = count($posts);
-
-  $program_archive_query = array(
-    'post_type'      => 'program',
-    'post_status'    => 'publish'
-  );
-  $program_archives = new WP_Query($program_archive_query);
 ?>
 
 <div class="article-list">
@@ -35,19 +29,45 @@
   <?php endif; ?>
 </div>
 
-<?php if($program_archives->have_posts()): ?>
-  <?php $post_count = count($program_archives->posts); ?>
+<?php
+  $program_categories = get_terms('categories');
+  foreach ($program_categories as $category) {
+    $args = array(
+      'post_type' => 'program',
+      'categories' => $category,
+      'post_status' => 'publish'
+    );
+    $programs = get_posts( $args );
+  }
+?>
+
+<?php if(count($program_categories)): ?>
   <section class="page-header">
     <span class="section-number"></span>
     <h2 class="page-header__title underline"><span class="page-title">Past Programs</span></h2>
   </section>
+  <?php foreach($program_categories as $category): ?>
+    <section class="page-header">
+      <span class="section-number"></span>
+      <h3 class="page-header__title"><span class="page-title"><?= $category->name ?></span></h2>
+    </section>
 
-  <div class="article-list">
-    <?php while ($program_archives->have_posts()) : $program_archives->the_post(); ?>
-      <span class="article-list__section-number"><?= $menu_number .'.'. $post_count-- ?></span>
-      <div class="article-item">
-        <h2 class="article-item__title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-      </div>
-    <?php endwhile; ?>
-  </div>
+    <?php
+      $args = array(
+        'post_type' => 'program',
+        'categories' => $category->name,
+        'post_status' => 'publish'
+      );
+      $program_archives = get_posts($args);
+    ?>
+
+    <div class="article-list">
+      <?php foreach($program_archives as $post) : setup_postdata($post); ?>
+        <span class="article-list__section-number"></span>
+        <div class="article-item">
+          <h2 class="article-item__title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+        </div>
+      <?php endforeach; wp_reset_postdata(); ?>
+    </div>
+  <?php endforeach; ?>
 <?php endif; ?>
