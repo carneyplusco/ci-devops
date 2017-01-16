@@ -20,5 +20,8 @@ header {
     @include media($extra-small) {
       @include span-columns(6);
     }
+    [itemprop="telephone"] {
+      speak: spell-out;
+    }
   }
 }
