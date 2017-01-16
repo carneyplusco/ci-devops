@@ -20,8 +20,6 @@ main {
   @include span-columns(9);
 
   article {
-    @include span-columns(12);
-    margin-bottom: 0.75rem;
 
     aside {
       @include span-columns(1);
@@ -45,7 +43,7 @@ main {
   .logo-address { display: inline-block; }
 }
 
-.programs article { padding-left: 8.7613%; }
+// .programs article { padding-left: 8.7613%; }
 
 .section-number {
   position: absolute;

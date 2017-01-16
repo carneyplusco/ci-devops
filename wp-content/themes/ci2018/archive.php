@@ -7,7 +7,7 @@
 <section class="page-header">
   <span class="section-number"><?= $category_number ?>.</span>
   <h1 class="page-header__title underline"><?php the_category(' ') ?></h1>
-  <a class="page-header__back-button" href="<?= Extras\back_link() ?>">Back</a>
+  <a class="page-header__back-button" href="<?= Extras\back_link() ?>" aria-label="Go back to previous page" tabindex="0">Back</a>
 </section>
 
 <section class="page-content">
@@ -15,11 +15,13 @@
     <?php $count = $category->category_count; ?>
     <?php while (have_posts()) : the_post(); ?>
       <span class="article-list__section-number"><?= $category_number .'.'. $count-- ?></span>
-      <div class="article-item">
-        <h2 class="article-item__title"><a href="<?= get_the_permalink() ?>"><?php the_title(); ?></a></h2>
-        <h3 class="article-item__date"><?php the_time("d M Y"); ?></h2>
+      <article class="article-item" itemscope itemtype="http://schema.org/NewsArticle">
+        <h2 class="article-item__title" itemprop="headline"><a href="<?= get_the_permalink() ?>"><?php the_title(); ?></a></h2>
+        <h3 class="article-item__date" aria-label="<?= the_time("F jS, Y") ?>">
+          <time itemprop="datePublished" datetime="<?php the_time("Y-m-d"); ?>"><?php the_time("d M Y"); ?></time>
+        </h2>
         <?php the_excerpt(); ?>
-      </div>
+      </article>
     <?php endwhile; ?>
   </div>
 </section>

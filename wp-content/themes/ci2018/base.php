@@ -14,10 +14,13 @@ use Roots\Sage\Wrapper;
         <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
       </div>
     <![endif]-->
+
+    <a class="screen-reader-text" href="#main-content" tabindex="0">Skip to Content</a>
+
     <div class="wrap container" role="document">
       <div class="content row">
         <?php get_template_part('templates/header'); ?>
-        <main class="main">
+        <main class="main" id="main-content">
           <?php include Wrapper\template_path(); ?>
         </main>
       </div>
