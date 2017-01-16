@@ -51,3 +51,25 @@ function menu_number($menu_name, $item_name) {
 function back_link() {
   return wp_get_referer() ?: home_url();
 }
+
+/**
+ * Use | as separator
+ */
+function custom_separator($separator) {
+  return "|";
+}
+add_filter('document_title_separator', __NAMESPACE__ . '\\custom_separator');
+
+/**
+ * Adjust title display
+ */
+function adjust_title($title) {
+  if(is_front_page()) {
+    $title['title'] = '';
+  }
+  else {
+    $title['site'] = get_bloginfo('description');
+  }
+  return $title;
+}
+add_filter('document_title_parts',  __NAMESPACE__ . '\\adjust_title', 10);

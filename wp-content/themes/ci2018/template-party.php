@@ -7,7 +7,7 @@ use Roots\Sage\Extras;
 ?>
 
 <section class="page-header">
-  <h1 class="page-header__title"><span class="page-title">Party Records Search</span></h1>
+  <h1 class="page-header__title"><span class="page-title"><?= get_query_var( 'search' ) ? "Search Results for Past Internationals" : "Party Records Search" ?></span></h1>
   <a class="page-header__back-button" href="<?= Extras\back_link() ?>">Back</a>
 </section>
 
