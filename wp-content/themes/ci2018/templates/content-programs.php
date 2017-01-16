@@ -16,11 +16,13 @@
         $excerpt = $p->excerpt.' <a class="moretag" href="'. $p->url . '">Read more <span class="screen-reader-text">about ' . $p->name . '</span></a>';
       ?>
       <!-- <span class="article-list__section-number"><?= $menu_number .'.'. $post_count-- ?></span> -->
-      <div class="article-item">
-        <h2 class="article-item__title"><a href="<?= $p->url ?>" class="external-link"><?= $p->name ?><span class="screen-reader-text"> (Link opens on an external site)</span></a></h2>
-        <h3 class="article-item__date"><?= $date->format("d M Y") ?><br /><?= $date->format("g a") ?></h2>
+      <article class="article-item" itemscope itemtype="http://schema.org/Event">
+        <h2 class="article-item__title" itemprop="name"><a itemprop="url" href="<?= $p->url ?>" class="external-link"><?= $p->name ?><span class="screen-reader-text"> (Link opens on an external site)</span></a></h2>
+        <h3 class="article-item__date" aria-label="<?= $date->format("F jS, Y \a\\t g a") ?>">
+          <time itemprop="startDate" datetime="<?= $date->format("Y-m-d") ?>"><?= $date->format("d M Y") ?><br /><?= $date->format("g a") ?></time>
+        </h2>
         <?= wpautop($excerpt) ?>
-      </div>
+      </article>
     <?php endforeach; ?>
   <?php else: ?>
     <div class="article-item">
@@ -64,9 +66,9 @@
     <div class="article-list">
       <?php foreach($program_archives as $post) : setup_postdata($post); ?>
         <span class="article-list__section-number"></span>
-        <div class="article-item">
-          <h2 class="article-item__title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-        </div>
+        <article class="article-item" itemscope itemtype="http://schema.org/Event">
+          <h4 class="article-item__title" itemprop="name"><a itemprop="url" href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+        </article>
       <?php endforeach; wp_reset_postdata(); ?>
     </div>
   <?php endforeach; ?>

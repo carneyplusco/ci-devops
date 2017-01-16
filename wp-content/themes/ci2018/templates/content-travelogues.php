@@ -12,9 +12,9 @@
 <div class="article-list">
   <?php foreach($posts as $p): ?>
     <span class="article-list__section-number"><?= $menu_number .'.'. $post_count-- ?></span>
-    <div class="article-item">
-      <h2><a href="<?= $p->link ?>" class="external-link"><?= $p->title->rendered ?><span class="screen-reader-text"> (Link opens on an external site)</span></a></h2>
+    <article class="article-item" itemscope itemtype="http://schema.org/NewsArticle">
+      <h2 itemprop="headline"><a itemprop="url" href="<?= $p->link ?>" class="external-link"><?= $p->title->rendered ?><span class="screen-reader-text"> (Link opens on an external site)</span></a></h2>
       <?= wpautop($p->post_list_text) ?>
-    </div>
+    </article>
   <?php endforeach; ?>
 </div>
