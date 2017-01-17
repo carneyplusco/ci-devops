@@ -19,3 +19,12 @@
     width: 8px;
   }
 }
+
+%square-bullet {
+  display: inline-block;
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: $medium-dark-gray;
+  vertical-align: 2px;
+}

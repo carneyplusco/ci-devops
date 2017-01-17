@@ -16,6 +16,7 @@ $sage_includes = [
   'lib/titles.php',           // Page titles
   'lib/wrapper.php',          // Theme wrapper class
   'lib/customizer.php',       // Theme customizer
+  'lib/shortcodes.php',       // Custom shortcodes
   'lib/post_types.php'        // Custom post types
 ];
 
