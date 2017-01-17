@@ -2,7 +2,7 @@
 
 <footer class="main-footer">
   <div class="container">
-    <section class="logo red">
+    <section class="logo">
         <?= Assets\inline_svg('images/cmoa.svg'); ?>
       </section>
 
