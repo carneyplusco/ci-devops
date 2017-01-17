@@ -14,6 +14,12 @@
   $participants = new WP_Query($participants_query);
 ?>
 
+<article <?php post_class('article-item'); ?>>
+  <div class="entry-content">
+    <?php the_content(); ?>
+  </div>
+</article>
+
 <?php if($participants->have_posts()): ?>
   <?php $post_count = 1 ?>
   <div class="article-list -participants">
