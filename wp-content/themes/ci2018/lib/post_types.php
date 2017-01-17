@@ -43,7 +43,7 @@ function create_post_types() {
         'delete_others_posts' => 'delete_others_programs',
         'delete_private_posts' => 'delete_private_programs',
       ),
-      'rewrite' => array('slug' => 'programs', 'with_front' => false),
+      'rewrite' => array('slug' => 'program', 'with_front' => false),
       'menu_icon' => 'dashicons-art'
     )
   );
@@ -95,7 +95,7 @@ add_action('init', __NAMESPACE__ . '\\create_post_types');
 
 function program_taxonomies() {
   register_taxonomy(
-    'categories',
+    'program_categories',
     'program',
     array(
       'labels' => array(
@@ -114,7 +114,7 @@ function program_taxonomies() {
         'not_found_in_trash' => __('No categories found in Trash')
       ),
       'hierarchical' => true,
-      'rewrite' => array('slug' => 'category', 'with_front' => false)
+      'rewrite' => array('slug' => 'program_category', 'with_front' => false)
     )
   );
 }
