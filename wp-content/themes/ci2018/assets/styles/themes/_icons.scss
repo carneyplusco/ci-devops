@@ -21,12 +21,12 @@ body.home {
   width: 9px;
 }
 
-.icon {
-  @include span-columns(1);
-  padding-top: 0.22rem;
-
-  &:before { content: none; }
-}
+// .icon {
+//   @include span-columns(1);
+//   padding-top: 0.22rem;
+//
+//   &:before { content: none; }
+// }
 
 .icon-search:after {
   content: url('../images/ci-search.svg');

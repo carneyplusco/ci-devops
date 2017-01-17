@@ -56,3 +56,7 @@ function asset_path($filename) {
     return $dist_path . $directory . $file;
   }
 }
+
+function inline_svg($filename) {
+  return file_get_contents(asset_path($filename));
+}

@@ -17,18 +17,20 @@ use Roots\Sage\Wrapper;
 
     <a class="screen-reader-text" href="#main-content" tabindex="0">Skip to Content</a>
 
-    <div class="wrap container" role="document">
-      <div class="content row">
-        <?php get_template_part('templates/header'); ?>
-        <main class="main" id="main-content">
-          <?php include Wrapper\template_path(); ?>
-        </main>
+    <div class="outer-container">
+      <div class="wrap container" role="document">
+        <div class="content row">
+          <?php get_template_part('templates/header'); ?>
+          <main class="main" id="main-content">
+            <?php include Wrapper\template_path(); ?>
+          </main>
+        </div>
       </div>
+      <?php
+        do_action('get_footer');
+        get_template_part('templates/footer');
+        wp_footer();
+      ?>
     </div>
-    <?php
-      do_action('get_footer');
-      get_template_part('templates/footer');
-      wp_footer();
-    ?>
   </body>
 </html>

@@ -18,12 +18,23 @@
   "keywords": [
     "wordpress"
   ],
+  "repositories":[
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/cmoa/wp-static-data"
+    }
+  ],
   "require": {
     "mustache/mustache": "~2.5",
     "vlucas/phpdotenv": "^2.0.1",
     "oscarotero/env": "^1.0",
     "codeception/codeception": "^2.1",
     "roots/wp-password-bcrypt": "^1.0.0",
-    "monolog/monolog": "^1.21"
+    "monolog/monolog": "^1.21",
+    "cmoa/wp-static-data": "^1.0.0"
   }
 }
