@@ -32,7 +32,7 @@
 </div>
 
 <?php
-  $program_categories = get_terms('categories');
+  $program_categories = get_terms('program_categories');
   foreach ($program_categories as $category) {
     $args = array(
       'post_type' => 'program',
@@ -51,25 +51,7 @@
   <?php foreach($program_categories as $category): ?>
     <section class="page-header">
       <span class="section-number"></span>
-      <h3 class="page-header__title"><span class="page-title"><?= $category->name ?></span></h2>
+      <h3 class="page-header__title"><a href="<?= get_term_link($category) ?>" class="page-title"><?= $category->name ?></a></h2>
     </section>
-
-    <?php
-      $args = array(
-        'post_type' => 'program',
-        'categories' => $category->name,
-        'post_status' => 'publish'
-      );
-      $program_archives = get_posts($args);
-    ?>
-
-    <div class="article-list">
-      <?php foreach($program_archives as $post) : setup_postdata($post); ?>
-        <span class="article-list__section-number"></span>
-        <article class="article-item" itemscope itemtype="http://schema.org/Event">
-          <h4 class="article-item__title" itemprop="name"><a itemprop="url" href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-        </article>
-      <?php endforeach; wp_reset_postdata(); ?>
-    </div>
   <?php endforeach; ?>
 <?php endif; ?>
