@@ -25,7 +25,6 @@
         <h4 class="article-item__date" aria-label="<?= the_time("F jS, Y") ?>">
           <time property="datePublished" datetime="<?php the_time("Y-m-d"); ?>"><?php the_time("d M Y"); ?></time>
         </h4>
-        <?php the_excerpt(); ?>
       </article>
     <?php endwhile; ?>
   </div>
