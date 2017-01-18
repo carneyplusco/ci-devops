@@ -14,20 +14,31 @@
   $participants = new WP_Query($participants_query);
 ?>
 
-<article <?php post_class('article-item'); ?>>
-  <div class="entry-content">
-    <?php the_content(); ?>
-  </div>
-</article>
+<section class="page-content">
+  <article <?php post_class('article-item'); ?>>
+    <div class="entry-content">
+      <?php the_content(); ?>
+    </div>
+  </article>
+</section>
+
+<section class="page-content">
+  <section class="page-header">
+    <span class="section-number"><i class="icon-search"></i></span>
+    <?php get_template_part('templates/party', 'searchform'); ?>
+  </section>
+</section>
 
 <?php if($participants->have_posts()): ?>
-  <?php $post_count = 1 ?>
-  <div class="article-list -participants">
-    <?php while ($participants->have_posts()) : $participants->the_post(); ?>
-      <span class="article-list__section-number"><?= $menu_number .'.'. $post_count++ ?></span>
-      <div class="article-link" vocab="http://schema.org/" typeof="Person">
-        <h2 class="article-item__title" property="name"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-      </div>
-    <?php endwhile; ?>
-  </div>
+  <section class="page-content">
+    <?php $post_count = 1 ?>
+    <div class="article-list -participants">
+      <?php while ($participants->have_posts()) : $participants->the_post(); ?>
+        <span class="article-list__section-number"><?= $menu_number .'.'. $post_count++ ?></span>
+        <div class="article-link" vocab="http://schema.org/" typeof="Person">
+          <h2 class="article-item__title" property="name"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+        </div>
+      <?php endwhile; ?>
+    </div>
+  </section>
 <?php endif; ?>
