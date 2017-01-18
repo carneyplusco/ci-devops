@@ -6,13 +6,13 @@
 
   $travelogue_tag_id = 117;
   $posts = json_decode(file_get_contents("http://blog.cmoa.org/wp-json/wp/v2/posts?tags={$travelogue_tag_id}&order=asc"));
-  $post_count = count($posts);
+  $post_count = 1;
 ?>
 
 <div class="article-list">
   <?php if($post_count): ?>
     <?php foreach($posts as $p): ?>
-      <span class="article-list__section-number"><?= $menu_number .'.'. $post_count-- ?></span>
+      <span class="article-list__section-number"><?= $menu_number .'.'. $post_count++ ?></span>
       <article class="article-item" vocab="http://schema.org/" typeof="NewsArticle">
         <h2 property="headline"><a property="url" href="<?= $p->link ?>" class="external-link"><?= $p->title->rendered ?></a></h2>
         <span class="screen-reader-text">(Link opens on an external site)</span>
