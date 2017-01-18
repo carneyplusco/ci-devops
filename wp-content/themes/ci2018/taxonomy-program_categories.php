@@ -15,12 +15,15 @@
 
 <section class="page-content">
   <div class="article-list">
+    <div class="page-content__body">
+      <?= wpautop($category->description) ?>
+    </div>
     <?php while (have_posts()) : the_post(); ?>
       <span class="article-list__section-number"></span>
-      <article class="article-item" itemscope itemtype="http://schema.org/NewsArticle">
-        <h3 class="article-item__title" itemprop="headline"><a href="<?= get_the_permalink() ?>"><?php the_title(); ?></a></h3>
+      <article class="article-item" vocab="http://schema.org/" typeof="NewsArticle">
+        <h3 class="article-item__title" property="headline"><a href="<?= get_the_permalink() ?>"><?php the_title(); ?></a></h3>
         <h4 class="article-item__date" aria-label="<?= the_time("F jS, Y") ?>">
-          <time itemprop="datePublished" datetime="<?php the_time("Y-m-d"); ?>"><?php the_time("d M Y"); ?></time>
+          <time property="datePublished" datetime="<?php the_time("Y-m-d"); ?>"><?php the_time("d M Y"); ?></time>
         </h4>
         <?php the_excerpt(); ?>
       </article>

@@ -16,11 +16,12 @@
     <?php while (have_posts()) : the_post(); ?>
       <?php $pdf_link = get_field('pdf_link'); ?>
       <span class="article-list__section-number"><?= $category_number .'.'. $count-- ?></span>
-      <article class="article-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
-        <h2 class="article-item__author" itemprop="author"><?php the_field('author_name') ?>
-        <h2 class="article-item__title" itemprop="headline"><a href="<?= $pdf_link['url'] ?>"><?php the_title(); ?><span class="screen-reader-text">(PDF Download)</span></a></h2>
+      <article class="article-item" vocab="http://schema.org/" typeof="http://schema.org/ScholarlyArticle">
+        <h2 class="article-item__author" property="author"><?php the_field('author_name') ?>
+        <h2 class="article-item__title" property="headline"><a href="<?= $pdf_link['url'] ?>"><?php the_title(); ?></a></h2>
+        <span class="screen-reader-text">(PDF Download)</span>
         <h3 class="article-item__date">
-          <time itemprop="datePublished"><?php the_field('publication_date'); ?></time>
+          <time property="datePublished"><?php the_field('publication_date'); ?></time>
         </h2>
       </article>
     <?php endwhile; ?>

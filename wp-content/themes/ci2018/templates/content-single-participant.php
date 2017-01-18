@@ -30,8 +30,8 @@
 
   <section class="page-content">
     <span class="section-number"><?= $menu_number .'.'. $index ?></span>
-    <article <?php post_class('article-item'); ?> itemscope itemtype="http://schema.org/Person">
-      <h2 class="article-item__title" itemprop="name"><?php the_title(); ?></h2>
+    <article <?php post_class('article-item'); ?> vocab="http://schema.org/" typeof="Person">
+      <h2 class="article-item__title" property="name"><?php the_title(); ?></h2>
       <div class="entry-content">
         <?php the_content(); ?>
       </div>
