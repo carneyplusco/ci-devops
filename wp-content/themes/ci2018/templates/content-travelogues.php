@@ -4,7 +4,7 @@
   $menu_items = wp_get_nav_menu_items('Home Nav');
   $menu_number = Extras\menu_number('Home Nav', get_the_title());
 
-  $travelogue_tag_id = 113;
+  $travelogue_tag_id = 117;
   $posts = json_decode(file_get_contents("http://blog.cmoa.org/wp-json/wp/v2/posts?tags={$travelogue_tag_id}&order=asc"));
   $post_count = count($posts);
 ?>
