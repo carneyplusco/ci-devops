@@ -83,6 +83,10 @@ hr {
 
 figure {
   margin: 0 0 $base-spacing 0;
+  max-width: 100%;
+  img {
+    height: auto;
+  }
 }
 
 img,
