@@ -145,3 +145,13 @@ function custom_search_endpoint() {
   add_rewrite_endpoint('search', EP_PAGES);
 }
 add_action('init', __NAMESPACE__ . '\\custom_search_endpoint');
+
+// Order programs archives by oldest to newest
+function change_programs_order($query) {
+  if(is_tax('program_categories')) {
+    $query->set('order', 'ASC');
+  }
+}
+add_action('pre_get_posts', __NAMESPACE__ . '\\change_programs_order');
+
+?>

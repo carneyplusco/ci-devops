@@ -25,8 +25,8 @@
   <div class="article-list -participants">
     <?php while ($participants->have_posts()) : $participants->the_post(); ?>
       <span class="article-list__section-number"><?= $menu_number .'.'. $post_count++ ?></span>
-      <div class="article-link" itemscope itemtype="http://schema.org/Person">
-        <h2 class="article-item__title" itemprop="name"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+      <div class="article-link" vocab="http://schema.org/" typeof="Person">
+        <h2 class="article-item__title" property="name"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
       </div>
     <?php endwhile; ?>
   </div>
