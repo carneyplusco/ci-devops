@@ -13,14 +13,23 @@
       <?php
         $date = new DateTime($p->start);
         $excerpt = $p->excerpt.' <a class="moretag" href="'. $p->url . '">Read more <span class="screen-reader-text">about ' . $p->name . '</span></a>';
+        $time_location = $date->format("g a");
+        if(count($p->locations)) {
+          $time_location .= ", ".implode($p->locations, ', ');
+        }
+        elseif(!empty($p->building_location)) {
+          $time_location .= ", ".$p->building_location;
+        }
       ?>
       <article class="article-item" vocab="http://schema.org/" typeof="Event">
         <h2 class="article-item__title" property="name"><a property="url" href="<?= $p->url ?>" class="external-link"><?= $p->name ?></a></h2>
         <span class="screen-reader-text">(Link opens on an external site)</span>
-        <h3 class="article-item__date" aria-label="<?= $date->format("F jS, Y \a\\t g a") ?>">
-          <time property="startDate" datetime="<?= $date->format("Y-m-d") ?>"><?= $date->format("d M Y") ?><br /><?= $date->format("g a") ?></time>
-        </h2>
-        <?= wpautop($excerpt) ?>
+        <h3 class="article-item__date">
+          <time property="startDate" aria-label="<?= $date->format("F jS, Y \a\\t g a") ?>" datetime="<?= $date->format("Y-m-d") ?>"><?= $date->format("d M Y") ?>
+            <br />
+            <?= $time_location ?>
+          </time>
+        </h3>
       </article>
     <?php endforeach; ?>
   <?php else: ?>
