@@ -12,9 +12,15 @@
       $archived_category = get_field('archive_category');
       $args = array(
         'post_type'   => 'program',
-        'categories'  => $archived_category,
         'post_status' => 'publish',
-        'order'       => 'asc'
+        'order'       => 'asc',
+        'tax_query'   => [
+          [
+            'taxonomy' => 'program_categories',
+            'field' => 'term_id',
+            'terms' => $archived_category->term_id
+          ]
+        ]
       );
       $archive_posts = get_posts($args);
       $post_count = 1;
