@@ -40,15 +40,14 @@
 </div>
 
 <?php
-  $program_categories = get_terms('program_categories');
-  foreach ($program_categories as $category) {
-    $args = array(
-      'post_type' => 'program',
-      'categories' => $category,
-      'post_status' => 'publish'
-    );
-    $programs = get_posts($args);
-  }
+  $args = array(
+    'post_type'   => 'page',
+    'post_parent' => get_the_ID(),
+    'post_status' => 'publish',
+    'orderby'     => 'menu_order',
+    'order'       => 'asc'
+  );
+  $program_categories = get_posts($args);
   $post_count = 1;
 ?>
 
@@ -57,10 +56,10 @@
     <span class="section-number"></span>
     <h2 class="page-header__title underline"><span class="page-title">Past Programs</span></h2>
   </section>
-  <?php foreach($program_categories as $category): ?>
+  <?php foreach($program_categories as $post): setup_postdata($post); ?>
     <section class="page-header">
       <span class="section-number"><?= $menu_number .'.'. $post_count++ ?></span>
-      <h3 class="page-header__title"><a href="<?= get_term_link($category) ?>" class="page-title"><?= $category->name ?></a></h2>
+      <h3 class="page-header__title"><a href="<?php the_permalink() ?>" class="page-title"><?php the_title() ?></a></h2>
     </section>
-  <?php endforeach; ?>
+  <?php endforeach; wp_reset_postdata(); ?>
 <?php endif; ?>
