@@ -22,16 +22,16 @@
       <section class="social">
         <ul class="links">
           <li>
-            <a href="http://www.facebook.com/CarnegieMuseumofArt" aria-label="facebook" title="Facebook"><i class="icon -facebook" aria-hidden="true"></i></a>
+            <a href="http://www.facebook.com/CarnegieMuseumofArt" aria-label="facebook" title="Facebook"><i class="icon -facebook" aria-hidden="true"></i><span class="screen-reader-text">Carnegie Musemu of Art on Facebook</span></a>
           </li>
           <li>
-            <a href="http://twitter.com/cmoa" aria-label="twitter" title="Twitter"><i class="icon -twitter" aria-hidden="true"></i></a>
+            <a href="http://twitter.com/cmoa" aria-label="twitter" title="Twitter"><i class="icon -twitter" aria-hidden="true"></i><span class="screen-reader-text">Carnegie Musemu of Art on Twitter</span></a>
           </li>
           <li>
-            <a href="http://instagram.com/thecmoa" aria-label="instagram" title="Instagram"><i class="icon -instagram" aria-hidden="true"></i></a>
+            <a href="http://instagram.com/thecmoa" aria-label="instagram" title="Instagram"><i class="icon -instagram" aria-hidden="true"></i><span class="screen-reader-text">Carnegie Musemu of Art on Instagram</span></a>
           </li>
           <li>
-            <a href="http://vimeo.com/cmoa" aria-label="vimeo" title="Vimeo"><i class="icon -vimeo" aria-hidden="true"></i></a>
+            <a href="http://vimeo.com/cmoa" aria-label="vimeo" title="Vimeo"><i class="icon -vimeo" aria-hidden="true"></i><span class="screen-reader-text">Carnegie Musemu of Art on Vimeo</span></a>
           </li>
         </ul>
         <p>
