@@ -27,3 +27,25 @@
 	font-weight: 700;
 	font-style: normal;
 }
+
+@font-face {
+  font-family: 'Brunel Text Web';
+  src: url('../fonts/BrunelText-Italic-Web.eot');
+  src: url('../fonts/BrunelText-Italic-Web.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/BrunelText-Italic-Web.woff2') format('woff2'),
+       url('../fonts/BrunelText-Italic-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Brunel Text Web';
+  src: url('../fonts/BrunelText-Roman-Web.eot');
+  src: url('../fonts/BrunelText-Roman-Web.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/BrunelText-Roman-Web.woff2') format('woff2'),
+       url('../fonts/BrunelText-Roman-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}

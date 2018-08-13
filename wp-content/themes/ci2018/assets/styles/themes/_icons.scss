@@ -8,13 +8,6 @@
   &:hover { cursor: pointer; }
 }
 
-body.home {
-  .content {
-    background-position: center;
-    background-size: 90% 90%;
-  }
-}
-
 .external-link-arrow:after {
   content: url('../images/ci-arrow-external.svg');
   display: inline-block;

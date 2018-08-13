@@ -1,0 +1,65 @@
+article.updates {
+  @include span-columns(4);
+  border-width: 50px 60px;
+  border-style: solid;
+  border-image: url('../images/flourish-border.svg') 50 60 repeat;
+  clear: both;
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 8.761%;
+  margin-right: 0;
+  font-family: 'Brunel Text Web', $accent-font-family;
+  font-size: 1.2rem;
+  text-align: center;
+
+  h2 {
+    font-family: inherit;
+  }
+
+  @include media($large) {
+    float: none;
+    width: 100%;
+    max-width: 500px;
+    margin: $base-spacing 0 (2 * $base-spacing) 0;
+    position: static;
+  }
+
+  @include media($small) {
+    max-width: 100%;
+  }
+
+  @include media($extra-small) {
+    font-size: 1rem;
+  }
+}
+
+.updates__list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  & > li {
+    position: relative;
+    margin-bottom: 0;
+
+    & + li {
+      padding-top: $medium-spacing;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: $medium-spacing / 2;
+        left: calc(50% - #{$large-spacing / 2});
+        width: $large-spacing;
+        border-top: 1px solid $medium-gray;
+      }
+    }
+  }
+
+  @include media($small) {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+}
