@@ -52,7 +52,6 @@ import Party from './es-client';
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-        CycleLetters.run();
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
