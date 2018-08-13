@@ -8,6 +8,6 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://localhost:3000
+            url: http://2018.carnegieinternational.test:3000
             browser: phantomjs
         - \Helper\Acceptance

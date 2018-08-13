@@ -111,8 +111,17 @@ composer.phar
 vendor/*
 !vendor/.gitkeep
 
-# Node Package Manager
+# npm packages
 node_modules
 bower_components
 
-tests/_output/*
+# WP plugins
+wp-content/plugins/*
+!wp-content/plugins/advanced-custom-fields-pro
+!wp-content/plugins/wp-migrate-db-pro
+!wp-content/plugins/wp-migrate-db-pro-cli
+!wp-content/plugins/wp-migrate-db-pro-media-files
+!wp-content/plugins/wp-migrate-db-pro-multisite-tools
+
+# Gulp build directory
+wp-content/themes/**/dist

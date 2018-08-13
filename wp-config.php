@@ -18,7 +18,7 @@ Env::init();
 $dotenv = new Dotenv\Dotenv($root_dir);
 if (file_exists($root_dir . '/.env')) {
   $dotenv->load();
-  $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
+  $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL', 'MULTISITE_DOMAIN']);
 }
 
 /**
@@ -59,6 +59,7 @@ define('NONCE_SALT', env('NONCE_SALT'));
 /**
  * Multi-site settings
  */
+$base = '/';
 define('WP_ALLOW_MULTISITE', true);
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', true);
@@ -88,9 +89,9 @@ define('SITECOOKIEPATH', '');
 /**
  * Custom settings
  */
-define('AUTOMATIC_UPDATER_DISABLED', true);
+// define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
-define('DISALLOW_FILE_EDIT', true);
+// define('DISALLOW_FILE_EDIT', true);
 define('WP_DEFAULT_THEME', 'ci2018');
 
 /* That's all, stop editing! Happy blogging. */
