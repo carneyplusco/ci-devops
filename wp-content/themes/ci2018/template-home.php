@@ -6,6 +6,8 @@
 
 <h1 class="screen-reader-text">Carnegie International 2018, Home</h1>
 
+<?php get_template_part('templates/updates'); ?>
+
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part('templates/content', 'home'); ?>
 <?php endwhile; ?>

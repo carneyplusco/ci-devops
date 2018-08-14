@@ -1,0 +1,46 @@
+{
+    "key": "group_5880cd6053509",
+    "title": "Additional Program Details",
+    "fields": [
+        {
+            "key": "field_5880cd6df4488",
+            "label": "Archive Category",
+            "name": "archive_category",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "program_categories",
+            "field_type": "select",
+            "multiple": 0,
+            "allow_null": 0,
+            "return_format": "object",
+            "add_term": 1,
+            "load_terms": 0,
+            "save_terms": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_parent",
+                "operator": "==",
+                "value": "20"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1534189519
+}

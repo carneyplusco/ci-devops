@@ -17,12 +17,25 @@
   background: url('../images/CI5718/ci-8.svg') no-repeat top;
 }
 
-.home {
-  // .icon {
-  //   margin-right: 0;
-  //   padding-top: 0.2rem;
-  //   width: 48px;
-  // }
+body.home {
+  .main {
+    @include span-columns(5);
+
+    @include media($large) {
+      @include span-columns(9);
+    }
+
+    @include media($small) {
+      @include shift(0);
+      @include span-columns(6);
+    }
+  }
+
+  .content {
+    background-position: center;
+    background-size: 90% 90%;
+    position: relative;
+  }
 
   .search-form {
     float: left;

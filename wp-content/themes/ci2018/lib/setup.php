@@ -154,4 +154,7 @@ function change_programs_order($query) {
 }
 add_action('pre_get_posts', __NAMESPACE__ . '\\change_programs_order');
 
-?>
+// Add ACF options page
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page();
+}
