@@ -1,3 +1,0 @@
----
-# vars file for nodejs
-debian_repo_version: "{{ nodejs_version if '5' not in nodejs_version else '5.x' }}"

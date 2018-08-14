@@ -6,7 +6,7 @@
 
   "tasks": {
     "browserSync": {
-      "proxy": "http://ci2018.dev",
+      "proxy": "http://2018.carnegieinternational.test",
       "notify": false
     },
 

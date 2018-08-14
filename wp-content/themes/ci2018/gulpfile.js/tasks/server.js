@@ -18,7 +18,7 @@ var settings = {
 }
 
 var serverTask = function() {
-  var url = 'http://ci2018.dev:' + settings.port
+  var url = 'http://2018.carnegieinternational.test:' + settings.port
 
   express()
     .use(compress())
