@@ -44,3 +44,8 @@
     </p>
   </div>
 </footer>
+
+<?php $internal_domains = get_field('internal_domains', 'options') ?: ''; ?>
+<script type="text/javascript">
+  const INTERNAL_DOMAINS = <?= json_encode(explode("\n", $internal_domains), true) ?>;
+</script>

@@ -36,6 +36,20 @@ import Party from './es-client';
         // store bg_class in session storage to persist across page loads
         store.session('bg', selected_bg);
 
+        // add is-external class to external links
+        const internal_domains = []
+          .concat(document.location.host, INTERNAL_DOMAINS || [])
+          .map(domain => domain
+              .trim()
+              .replace(/^\*\./, "([A-Za-z0-9_]+\\.)?")
+              .replace(/\.\*$/, "\\.[^\\.\\/]+"))
+          .join("|");
+        const internal_regex = new RegExp(`^(#|((https?:)?\/\/)?(${internal_domains}))`, 'i');
+        $('.main a, article.updates a').each((index, link) => {
+          const href = link.href || '';
+          $(link).toggleClass('is-external', !href.match(internal_regex));
+        });
+
         Underliner.init();
 
         $('figure a').featherlight({
