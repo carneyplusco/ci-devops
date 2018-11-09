@@ -106,11 +106,13 @@ function assets() {
   wp_enqueue_script('elasticsearch', Assets\asset_path('bower_components/elasticsearch/elasticsearch.jquery.js'), ['jquery'], null, true);
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery', 'elasticsearch'], null, true);
 
-  // Not necessary if not searching WP posts
-  wp_localize_script('sage/js', 'esclient', array(
-    'es_host' => ES_HOST,
-    'template_dir' => get_template_directory_uri()
-  ));
+  if (defined('ES_HOST')) {
+    // Not necessary if not searching WP posts
+    wp_localize_script('sage/js', 'esclient', array(
+      'es_host' => ES_HOST,
+      'template_dir' => get_template_directory_uri()
+    ));
+  }
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 

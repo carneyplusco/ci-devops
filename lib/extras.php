@@ -36,13 +36,18 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  * Find the current item in a given menu
  */
 function menu_number($menu_name, $item_name) {
-  $menu_items = array_map(function($item) {
-    return strtolower($item->title);
-  }, wp_get_nav_menu_items($menu_name));
+  $menu = wp_get_nav_menu_items($menu_name);
+  if($menu) {
+    $menu_items = array_map(function($item) {
+      return strtolower($item->title);
+    }, $menu);
 
-  $title_number = array_search(strtolower($item_name), $menu_items);
+    $title_number = array_search(strtolower($item_name), $menu_items);
 
-  return $title_number !== FALSE ? $title_number + 1 : 0;
+    return $title_number !== FALSE ? $title_number + 1 : 0;
+  }
+
+  return 0;
 }
 
 /**
