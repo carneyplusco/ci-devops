@@ -30,7 +30,7 @@
   ],
   "extra": {
     "installer-paths": {
-      "../../plugins/{$name}/": [
+      "../../../wp-content/plugins/{$name}/": [
         "type:wordpress-plugin"
       ]
     }
@@ -46,8 +46,13 @@
     "wpackagist-plugin/wordpress-importer": "^0.6.4"
   },
   "scripts": {
-    "copy-plugins": [
-      "cp -R plugins/* ../../plugins"
+    "post-install-cmd": [
+      "mkdir -p ../../../wp-content/plugins",
+      "cp -R plugins/* ../../../wp-content/plugins"
+    ],
+    "post-autoload-dump": [
+      "mkdir -p ../../../vendor",
+      "cp -R vendor/* ../../../vendor"
     ]
   }
 }
